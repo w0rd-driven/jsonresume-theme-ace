@@ -1,0 +1,24 @@
+{
+  "name": "jsonresume-theme-ace",
+  "version": "0.1.0",
+  "description": "Ace (of basic) theme for JSON Resume",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w0rd-driven/jsonresume-theme-ace"
+  },
+  "keywords": [
+    "json",
+    "resume",
+    "theme",
+    "ace"
+  ],
+  "author": "Jeremy Brayton <jeremy@braytonium.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/w0rd-driven/jsonresume-theme-ace/issues"
+  },
+  "homepage": "https://github.com/w0rd-driven/jsonresume-theme-ace#readme",
+  "dependencies": {
+    "handlebars": "~4"
+  }
+}
