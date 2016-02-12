@@ -1,10 +1,112 @@
 {{#extend "layout"}}
-  {{#content "title"}}
-    {{#resume.basics}}{{name}}{{/resume.basics}}
+  {{#content "title"}}{{basics.name}}{{/content}}
+  {{#content "header"}}
+      <h2>{{basics.name}}</h2>
   {{/content}}
-  {{#content "body"}}
-    Derp's the word
+  {{#content "summary"}}
+      <i class="fa fa-user fa-3x fa-border"></i>
+      <h3 class="sectionTitle">Profile</h3>
+      <p class="summary">{{basics.summary}}</p>
+  {{/content}}
+  {{#content "experience"}}
+      <i class="fa fa-suitcase fa-3x fa-border"></i>
+      <h3 class="sectionTitle">Experience</h3>
+      {{#each work}}
+          <article class="item">
+              <time class="date">
+                {{#if endDate}}
+                  {{#if startDate}}
+                      <time class="startDate" datetime="{{startDate}}">{{startDate}}</time>
+                      <time class="endDate" datetime="{{endDate}}">- {{endDate}}</time>
+                  {{else}}
+                      <time class="endDate" datetime="{{endDate}}">{{endDate}}</time>
+                  {{/if}}
+                {{else}}
+                    <span class="endDate">Present</span>
+                {{/if}}
+              </time>
+              <hgroup>
+                {{#if company}}
+                    <h4 class="company">{{company}}</h4>
+                {{/if}}
+                {{#if position}}
+                    <h5 class="position">{{position}}</h5>
+                {{/if}}
+              </hgroup>
+            {{#if website}}
+                <div class="website">
+                    <a href="{{website}}">{{website}}</a>
+                </div>
+            {{/if}}
+            {{#if summary}}
+                <div class="summary">
+                    <p>{{summary}}</p>
+                </div>
+            {{/if}}
+            {{#if highlights.length}}
+                <ul class="highlights">
+                  {{#each highlights}}
+                      <li>{{.}}</li>
+                  {{/each}}
+                </ul>
+            {{/if}}
+          </article>
+      {{/each}}
+  {{/content}}
+  {{#content "education"}}
+      <i class="fa fa-pencil fa-3x fa-border"></i>
+      <h3 class="sectionTitle">Education</h3>
+      {{#each education}}
+          <article class="item">
+              <time class="date">
+                {{#if endDate}}
+                  {{#if startDate}}
+                      <time class="startDate" datetime="{{startDate}}">{{startDate}}</time>
+                      <time class="endDate" datetime="{{endDate}}">- {{endDate}}</time>
+                  {{else}}
+                      <time class="endDate" datetime="{{endDate}}">{{endDate}}</time>
+                  {{/if}}
+                {{else}}
+                    <span class="endDate">Present</span>
+                {{/if}}
+              </time>
+              <hgroup>
+                {{#if area}}
+                    <h4 class="title">{{area}} {{studyType}}</h4>
+                {{/if}}
+                {{#if institution}}
+                    <h5 class="institution">{{institution}}</h5>
+                {{/if}}
+              </hgroup>
+          </article>
+      {{/each}}
   {{/content}}
   {{#content "footer"}}
+      <i class="fa fa-comments-o fa-4x"></i>
+      <i class="fa fa-inbox fa-4x"></i>
+      {{#if basics.website }}
+          <div class="website"><a href="{{basics.website}}">{{basics.website}}</a></div>
+      {{/if}}
+      {{#if basics.email }}
+          <div class="email"><a href="mailto:{{basics.email}}">{{basics.email}}</a></div>
+      {{/if}}
+      <div class="separator"></div>
+      {{#if basics.profiles.length}}
+          <section id="profiles">
+            {{#each basics.profiles}}
+                <article class="item">
+                  {{#if network}}
+                      <i class="fa fa-{{toLower network}} fa-2x fa-border"></i>
+                  {{/if}}
+                  {{#if url}}
+                      <a href="{{url}}">{{url}}</a>
+                  {{/if}}
+                </article>
+            {{/each}}
+          </section>
+      {{/if}}
+      {{#if basics.phone }}
+          <div class="phone">{{basics.phone}}</div>
+      {{/if}}
   {{/content}}
 {{/extend}}
