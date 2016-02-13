@@ -4,13 +4,13 @@
       <h2>{{basics.name}}</h2>
   {{/content}}
   {{#content "summary"}}
-      <i class="fa fa-user fa-3x fa-border"></i>
-      <h3 class="sectionTitle">Profile</h3>
+      <i class="fa fa-user fa-3x fa-border fa-pull-left"></i>
+      <h2 class="sectionTitle clearfix">Summary</h2>
       <p class="summary">{{basics.summary}}</p>
   {{/content}}
   {{#content "experience"}}
-      <i class="fa fa-suitcase fa-3x fa-border"></i>
-      <h3 class="sectionTitle">Experience</h3>
+      <i class="fa fa-suitcase fa-3x fa-border fa-pull-left"></i>
+      <h2 class="sectionTitle clearfix">Experience</h2>
       {{#each work}}
           <article class="item">
               <time class="date">
@@ -54,8 +54,8 @@
       {{/each}}
   {{/content}}
   {{#content "education"}}
-      <i class="fa fa-pencil fa-3x fa-border"></i>
-      <h3 class="sectionTitle">Education</h3>
+      <i class="fa fa-university fa-3x fa-border fa-pull-left"></i>
+      <h2 class="sectionTitle clearfix">Education</h2>
       {{#each education}}
           <article class="item">
               <time class="date">
@@ -72,7 +72,7 @@
               </time>
               <hgroup>
                 {{#if area}}
-                    <h4 class="title">{{area}} {{studyType}}</h4>
+                    <h4>{{area}} {{studyType}}</h4>
                 {{/if}}
                 {{#if institution}}
                     <h5 class="institution">{{institution}}</h5>
@@ -81,14 +81,53 @@
           </article>
       {{/each}}
   {{/content}}
+  {{#content "skills"}}
+      <i class="fa fa-pencil fa-3x fa-border fa-pull-left"></i>
+      <h2 class="sectionTitle clearfix">Skills</h2>
+      {{#each skills}}
+          <article class="item">
+            {{#if name}}
+                <h4>{{name}}</h4>
+            {{/if}}
+            {{#if keywords.length}}
+                <ul class="keywords">
+                  {{#each keywords}}
+                      <li>{{.}}</li>
+                  {{/each}}
+                </ul>
+            {{/if}}
+          </article>
+      {{/each}}
+  {{/content}}
+  {{#content "interests"}}
+      <i class="fa fa-pencil fa-3x fa-border fa-pull-left"></i>
+      <h2 class="sectionTitle clearfix">Interests</h2>
+      {{#each interests}}
+          <article class="item">
+            {{#if name}}
+                <h5>{{name}}</h5>
+            {{/if}}
+            {{#if keywords.length}}
+                <ul class="keywords">
+                  {{#each keywords}}
+                      <li>{{.}}</li>
+                  {{/each}}
+                </ul>
+            {{/if}}
+          </article>
+      {{/each}}
+  {{/content}}
   {{#content "footer"}}
-      <i class="fa fa-comments-o fa-4x"></i>
-      <i class="fa fa-inbox fa-4x"></i>
+      <i class="fa fa-inbox fa-3x fa-border"></i>
       {{#if basics.website }}
-          <div class="website"><a href="{{basics.website}}">{{basics.website}}</a></div>
+          <div class="website">
+              <a href="{{basics.website}}">{{basics.website}}</a>
+          </div>
       {{/if}}
       {{#if basics.email }}
-          <div class="email"><a href="mailto:{{basics.email}}">{{basics.email}}</a></div>
+          <div class="email">
+              <a href="mailto:{{basics.email}}">{{basics.email}}</a>
+          </div>
       {{/if}}
       <div class="separator"></div>
       {{#if basics.profiles.length}}
@@ -96,10 +135,14 @@
             {{#each basics.profiles}}
                 <article class="item">
                   {{#if network}}
-                      <i class="fa fa-{{toLower network}} fa-2x fa-border"></i>
+                      <div class="network">
+                          <i class="fa fa-{{toLower network}} fa-2x fa-border"></i>
+                      </div>
                   {{/if}}
                   {{#if url}}
-                      <a href="{{url}}">{{url}}</a>
+                      <div class="website">
+                          <a href="{{url}}">{{url}}</a>
+                      </div>
                   {{/if}}
                 </article>
             {{/each}}
