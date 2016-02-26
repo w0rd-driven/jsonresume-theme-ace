@@ -108,40 +108,48 @@
       {{/each}}
   {{/content}}
   {{#content "skills"}}
-      <i class="fa fa-pencil fa-2x fa-border fa-pull-left"></i>
-      <h2 class="sectionTitle clearfix">Skills</h2>
-      {{#each skills}}
-          <article class="item">
-            {{#if name}}
-                <h4>{{name}}</h4>
-            {{/if}}
-            {{#if keywords.length}}
-                <ul class="keywords">
-                  {{#each keywords}}
-                      <li>{{.}}</li>
-                  {{/each}}
-                </ul>
-            {{/if}}
-          </article>
-      {{/each}}
+      <article>
+          <header>
+              <i class="fa fa-pencil fa-2x fa-border fa-pull-left"></i>
+              <h2 class="sectionTitle clearfix">Skills</h2>
+          </header>
+        {{#each skills}}
+            <article class="item">
+              {{#if name}}
+                  <h4>{{name}}</h4>
+              {{/if}}
+              {{#if keywords.length}}
+                  <ul class="keywords">
+                    {{#each keywords}}
+                        <li>{{.}}</li>
+                    {{/each}}
+                  </ul>
+              {{/if}}
+            </article>
+        {{/each}}
+      </article>
   {{/content}}
   {{#content "interests"}}
-      <i class="fa fa-pencil fa-2x fa-border fa-pull-left"></i>
-      <h2 class="sectionTitle clearfix">Interests</h2>
-      {{#each interests}}
-          <article class="item">
-            {{#if name}}
-                <h5>{{name}}</h5>
-            {{/if}}
-            {{#if keywords.length}}
-                <ul class="keywords">
-                  {{#each keywords}}
-                      <li>{{.}}</li>
-                  {{/each}}
-                </ul>
-            {{/if}}
-          </article>
-      {{/each}}
+      <article>
+          <header>
+              <i class="fa fa-pencil fa-2x fa-border fa-pull-left"></i>
+              <h2 class="sectionTitle clearfix">Interests</h2>
+          </header>
+        {{#each interests}}
+            <article class="item">
+              {{#if name}}
+                  <h5>{{name}}</h5>
+              {{/if}}
+              {{#if keywords.length}}
+                  <ul class="keywords">
+                    {{#each keywords}}
+                        <li>{{.}}</li>
+                    {{/each}}
+                  </ul>
+              {{/if}}
+            </article>
+        {{/each}}
+      </article>
   {{/content}}
   {{#content "footer"}}
   {{/content}}
