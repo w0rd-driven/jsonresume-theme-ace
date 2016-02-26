@@ -28,49 +28,51 @@
       <p class="summary">{{basics.summary}}</p>
   {{/content}}
   {{#content "experience"}}
-      <i class="fa fa-suitcase fa-2x fa-border fa-pull-left"></i>
-      <h2 class="sectionTitle clearfix">Experience</h2>
-      {{#each work}}
-          <article class="item">
-              <time class="date">
-                {{#if endDate}}
-                  {{#if startDate}}
-                      <time class="startDate" datetime="{{startDate}}">{{startDate}}</time>
-                      <time class="endDate" datetime="{{endDate}}">- {{endDate}}</time>
+      <div class="col-md-1"><i class="fa fa-suitcase fa-2x fa-border fa-pull-left"></i></div>
+      <div class="col-md-11">
+          <div class="row"><h2 class="sectionTitle clearfix">Experience</h2></div>
+        {{#each work}}
+            <div class="row">
+              {{#if website}}
+                  <h4 class="company pull-left"><a href="{{website}}">{{company}}</a></h4>
+              {{else}}
+                  <h4 class="company pull-left">{{company}}</h4>
+              {{/if}}
+                <time class="date">
+                  {{#if endDate}}
+                    {{#if startDate}}
+                        <span class="startDate" datetime="{{startDate}}">{{startDate}}</span>
+                        <span class="endDate" datetime="{{endDate}}">- {{endDate}}</span>
+                    {{else}}
+                        <span class="endDate" datetime="{{endDate}}">{{endDate}}</span>
+                    {{/if}}
                   {{else}}
-                      <time class="endDate" datetime="{{endDate}}">{{endDate}}</time>
+                      <span class="endDate">Present</span>
                   {{/if}}
-                {{else}}
-                    <span class="endDate">Present</span>
-                {{/if}}
-              </time>
-              <hgroup>
-                {{#if company}}
-                    <h4 class="company">{{company}}</h4>
-                {{/if}}
-                {{#if position}}
-                    <h5 class="position">{{position}}</h5>
-                {{/if}}
-              </hgroup>
-            {{#if website}}
-                <div class="website">
-                    <a href="{{website}}">{{website}}</a>
-                </div>
-            {{/if}}
-            {{#if summary}}
-                <div class="summary">
-                    <p>{{summary}}</p>
-                </div>
-            {{/if}}
-            {{#if highlights.length}}
-                <ul class="highlights">
-                  {{#each highlights}}
-                      <li>{{.}}</li>
-                  {{/each}}
-                </ul>
-            {{/if}}
-          </article>
-      {{/each}}
+                </time>
+                <div class="clearfix"></div>
+              {{#if position}}
+                  <h5 class="position">{{position}}</h5>
+              {{/if}}
+            </div>
+            <div class="row">
+              {{#if summary}}
+                  <div class="summary">
+                      <p>{{summary}}</p>
+                  </div>
+              {{/if}}
+            </div>
+            <div class="row">
+              {{#if highlights.length}}
+                  <ul class="highlights">
+                    {{#each highlights}}
+                        <li>{{.}}</li>
+                    {{/each}}
+                  </ul>
+              {{/if}}
+            </div>
+        {{/each}}
+      </div>
   {{/content}}
   {{#content "education"}}
       <i class="fa fa-university fa-2x fa-border fa-pull-left"></i>

@@ -18,38 +18,26 @@
       {{#block "header"}}{{/block}}
     </div>
 </nav>
-<main class="container" role="main">
-    <div class="row">
-        <section id="summary">
-          {{#block "summary"}}{{/block}}
-        </section>
-        <hr class="separator" />
-    </div>
-    <div class="row">
-        <section id="experience">
-          {{#block "experience"}}{{/block}}
-        </section>
-    </div>
-    <div class="row">
-        <section id="education">
-          {{#block "education"}}{{/block}}
-        </section>
-    </div>
-    <div class="row">
-        <section id="skills">
-          {{#block "skills"}}{{/block}}
-        </section>
-    </div>
-    <div class="row">
-        <section id="interests">
-          {{#block "interests"}}{{/block}}
-        </section>
-    </div>
-    <div class="row">
-        <footer id="footer">
-          {{#block "footer"}}{{/block}}
-        </footer>
-    </div>
+<main id="sections" class="container" role="main">
+    <section id="section-summary">
+      {{#block "summary"}}{{/block}}
+    </section>
+    <hr class="separator" />
+    <section id="section-experience">
+      {{#block "experience"}}{{/block}}
+    </section>
+    <section id="section-education">
+      {{#block "education"}}{{/block}}
+    </section>
+    <section id="section-skills">
+      {{#block "skills"}}{{/block}}
+    </section>
+    <section id="section-interests">
+      {{#block "interests"}}{{/block}}
+    </section>
+    <footer id="footer">
+      {{#block "footer"}}{{/block}}
+    </footer>
   {{#block "scripts"}}
       <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>-->
   {{/block}}
