@@ -80,32 +80,53 @@
       </article>
   {{/content}}
   {{#content "education"}}
-      <i class="fa fa-university fa-2x fa-border fa-pull-left"></i>
-      <h2 class="sectionTitle clearfix">Education</h2>
-      {{#each education}}
-          <article class="item">
-              <time class="date">
-                {{#if endDate}}
-                  {{#if startDate}}
-                      <time class="startDate" datetime="{{startDate}}">{{startDate}}</time>
-                      <time class="endDate" datetime="{{endDate}}">- {{endDate}}</time>
-                  {{else}}
-                      <time class="endDate" datetime="{{endDate}}">{{endDate}}</time>
+      <article>
+          <header>
+              <i class="fa fa-university fa-2x fa-border fa-pull-left"></i>
+              <h2 class="sectionTitle clearfix">Education</h2>
+          </header>
+          <div class="col-md-1"></div>
+          <div class="col-md-11">
+            {{#each education}}
+                <div class="row">
+                  {{#if area}}
+                      <h4 class="area pull-left">{{area}} {{studyType}}</h4>
                   {{/if}}
-                {{else}}
-                    <span class="endDate">Present</span>
-                {{/if}}
-              </time>
-              <hgroup>
-                {{#if area}}
-                    <h4>{{area}} {{studyType}}</h4>
-                {{/if}}
-                {{#if institution}}
-                    <h5 class="institution">{{institution}}</h5>
-                {{/if}}
-              </hgroup>
-          </article>
-      {{/each}}
+                    <time class="date">
+                      {{#if endDate}}
+                        {{#if startDate}}
+                            <time class="startDate" datetime="{{startDate}}">{{startDate}}</time>
+                            <time class="endDate" datetime="{{endDate}}">- {{endDate}}</time>
+                        {{else}}
+                            <time class="endDate" datetime="{{endDate}}">{{endDate}}</time>
+                        {{/if}}
+                      {{else}}
+                          <span class="endDate">Present</span>
+                      {{/if}}
+                    </time>
+                    <div class="clearfix"></div>
+                  {{#if institution}}
+                      <h5 class="institution">{{institution}}</h5>
+                  {{/if}}
+                </div>
+                <div class="row">
+                  {{#if gpa}}
+                      <div class="gpa">GPA: {{gpa}}</div>
+                  {{/if}}
+                </div>
+                <div class="row">
+                  {{#if courses.length}}
+                      <ul class="courses">
+                        {{#each courses}}
+                            <li>{{.}}</li>
+                        {{/each}}
+                      </ul>
+                  {{/if}}
+                </div>
+            {{/each}}
+          </div>
+          </div>
+      </article>
   {{/content}}
   {{#content "skills"}}
       <article>
