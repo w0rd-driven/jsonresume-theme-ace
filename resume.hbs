@@ -3,6 +3,24 @@
   {{#content "header"}}
       <h2>{{basics.name}}</h2>
       <h4>{{basics.label}}</h4>
+      {{#if basics.profiles.length}}
+          <ul class="nav navbar-nav">
+            {{#each basics.profiles}}
+                <li><a href="{{url}}"><i class="fa fa-{{toLower network}} fa-border"></i>{{username}}</a></li>
+            {{/each}}
+          </ul>
+      {{/if}}
+      <ul class="nav navbar-nav navbar-right">
+        {{#if basics.website }}
+            <li><a href="{{basics.website}}">{{basics.website}}</a></li>
+        {{/if}}
+        {{#if basics.email }}
+            <li><a href="mailto:{{basics.email}}">{{basics.email}}</a></li>
+        {{/if}}
+        {{#if basics.phone }}
+            <li><a href="#">{{basics.phone}}</a></li>
+        {{/if}}
+      </ul>
   {{/content}}
   {{#content "summary"}}
       <i class="fa fa-user fa-2x fa-border fa-pull-left"></i>
@@ -119,38 +137,5 @@
       {{/each}}
   {{/content}}
   {{#content "footer"}}
-      <i class="fa fa-inbox fa-2x fa-border"></i>
-      {{#if basics.website }}
-          <div class="website">
-              <a href="{{basics.website}}">{{basics.website}}</a>
-          </div>
-      {{/if}}
-      {{#if basics.email }}
-          <div class="email">
-              <a href="mailto:{{basics.email}}">{{basics.email}}</a>
-          </div>
-      {{/if}}
-      <div class="separator"></div>
-      {{#if basics.profiles.length}}
-          <section id="profiles">
-            {{#each basics.profiles}}
-                <article class="item">
-                  {{#if network}}
-                      <div class="network">
-                          <i class="fa fa-{{toLower network}} fa-2x fa-border"></i>
-                      </div>
-                  {{/if}}
-                  {{#if url}}
-                      <div class="website">
-                          <a href="{{url}}">{{url}}</a>
-                      </div>
-                  {{/if}}
-                </article>
-            {{/each}}
-          </section>
-      {{/if}}
-      {{#if basics.phone }}
-          <div class="phone">{{basics.phone}}</div>
-      {{/if}}
   {{/content}}
 {{/extend}}
