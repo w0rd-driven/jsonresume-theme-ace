@@ -40,7 +40,39 @@
           <li><a href="mailto:{{basics.email}}"><i class="fa fa-envelope">{{basics.email}}</i></a></li>
       {{/if}}
       {{#if basics.location }}
-          <li><a href="#"><i class="fa fa-map-marker">{{basics.location.city}}, {{basics.location.countryCode}}</i></a></li>
+          <li>
+              <a href="#">
+                  <i class="fa fa-map-marker">
+                    {{#if basics.location.city}}
+                      {{#if basics.location.countryCode}}
+                        {{#if basics.location.region}}
+                          {{basics.location.city}}, {{basics.location.region}}, {{basics.location.countryCode}}
+                        {{else}}
+                          {{basics.location.city}}, {{basics.location.countryCode}}
+                        {{/if}}
+                      {{else}}
+                        {{#if basics.location.region}}
+                          {{basics.location.city}}, {{basics.location.region}}
+                        {{else}}
+                          {{basics.location.city}}
+                        {{/if}}
+                      {{/if}}
+                    {{else}}
+                      {{#if basics.location.countryCode}}
+                        {{#if basics.location.region}}
+                          {{basics.location.region}}, {{basics.location.countryCode}}
+                        {{else}}
+                          {{basics.location.countryCode}}
+                        {{/if}}
+                      {{else}}
+                        {{#if basics.location.region}}
+                          {{basics.location.region}}
+                        {{/if}}
+                      {{/if}}
+                    {{/if}}
+                  </i>
+              </a>
+          </li>
       {{/if}}
       {{#if basics.phone }}
           <li><a href="#">{{basics.phone}}</a></li>
