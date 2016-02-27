@@ -8,3 +8,18 @@
   height: 0;
   clear: both;
 }
+.keywords {
+  list-style: none;
+}
+.keyword {
+  background-color: #7eb0db;
+  color: white;
+  font-size: 0.9em;
+  padding: 5px;
+  border: 1px solid #357ebd;
+  margin-right: 5px;
+}
+.profile-pic img {
+  width: 100px;
+  height: 100px;
+}
