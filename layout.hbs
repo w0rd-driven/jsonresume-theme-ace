@@ -19,34 +19,52 @@
     </div>
 </nav>
 <main id="sections" class="container" role="main">
-    <section id="section-summary">
-      {{#block "summary"}}{{/block}}
-    </section>
-    <hr class="separator" />
-    <section id="section-experience">
-      {{#block "experience"}}{{/block}}
-    </section>
-    <section id="section-skills">
-      {{#block "skills"}}{{/block}}
-    </section>
-    <section id="section-education">
-      {{#block "education"}}{{/block}}
-    </section>
-    <section id="section-awards">
-      {{#block "awards"}}{{/block}}
-    </section>
-    <section id="section-volunteer">
-      {{#block "volunteer"}}{{/block}}
-    </section>
-    <section id="section-publications">
-      {{#block "publications"}}{{/block}}
-    </section>
-    <section id="section-interests">
-      {{#block "interests"}}{{/block}}
-    </section>
-    <section id="section-references">
-      {{#block "references"}}{{/block}}
-    </section>
+  {{#if basics.summary}}
+      <section id="section-summary">
+        {{#block "summary"}}{{/block}}
+      </section>
+      <hr class="separator" />
+  {{/if}}
+  {{#if work.length}}
+      <section id="section-experience">
+        {{#block "experience"}}{{/block}}
+      </section>
+  {{/if}}
+  {{#if skills.length}}
+      <section id="section-skills">
+        {{#block "skills"}}{{/block}}
+      </section>
+  {{/if}}
+  {{#if education.length}}
+      <section id="section-education">
+        {{#block "education"}}{{/block}}
+      </section>
+  {{/if}}
+  {{#if awards.length}}
+      <section id="section-awards">
+        {{#block "awards"}}{{/block}}
+      </section>
+  {{/if}}
+  {{#if volunteer.length}}
+      <section id="section-volunteer">
+        {{#block "volunteer"}}{{/block}}
+      </section>
+  {{/if}}
+  {{#if publications.length}}
+      <section id="section-publications">
+        {{#block "publications"}}{{/block}}
+      </section>
+  {{/if}}
+  {{#if interests.length}}
+      <section id="section-interests">
+        {{#block "interests"}}{{/block}}
+      </section>
+  {{/if}}
+  {{#if references.length}}
+      <section id="section-references">
+        {{#block "references"}}{{/block}}
+      </section>
+  {{/if}}
     <footer id="footer">
       {{#block "footer"}}{{/block}}
     </footer>
