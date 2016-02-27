@@ -23,15 +23,17 @@
       </ul>
   {{/content}}
   {{#content "summary"}}
-      <i class="fa fa-user fa-2x fa-border fa-pull-left"></i>
-      <h2 class="sectionTitle clearfix">Summary</h2>
+      <header id="header-summary">
+          <i class="fa fa-user fa-2x fa-border fa-pull-left"></i>
+          <h4 class="title text-uppercase clearfix">Summary</h4>
+      </header>
       <p class="summary">{{basics.summary}}</p>
   {{/content}}
   {{#content "experience"}}
       <article>
-          <header>
-              <i class="fa fa-suitcase fa-2x fa-border fa-pull-left"></i>
-              <h2 class="sectionTitle clearfix">Experience</h2>
+          <header id="header-experience">
+              <i class="fa fa-building fa-2x fa-border fa-pull-left"></i>
+              <h4 class="title text-uppercase clearfix">Experience</h4>
           </header>
           <div class="col-md-1"></div>
           <div class="col-md-11">
@@ -81,9 +83,9 @@
   {{/content}}
   {{#content "education"}}
       <article>
-          <header>
+          <header id="header-education">
               <i class="fa fa-university fa-2x fa-border fa-pull-left"></i>
-              <h2 class="sectionTitle clearfix">Education</h2>
+              <h4 class="title text-uppercase clearfix">Education</h4>
           </header>
           <div class="col-md-1"></div>
           <div class="col-md-11">
@@ -124,7 +126,6 @@
                   {{/if}}
                 </div>
             {{/each}}
-          </div>
           </div>
       </article>
   {{/content}}
