@@ -156,7 +156,7 @@
                       {{#if area}}
                           <h4 class="area pull-left">{{area}} {{studyType}}</h4>
                       {{/if}}
-                        <time class="date">
+                        <time class="date text-muted">
                           {{#if endDate}}
                             {{#if startDate}}
                                 <time class="startDate" datetime="{{startDate}}">{{startDate}}</time>
@@ -170,17 +170,17 @@
                         </time>
                         <div class="clearfix"></div>
                       {{#if institution}}
-                          <h5 class="institution">{{institution}}</h5>
+                          <h5 class="education-institution">{{institution}}</h5>
                       {{/if}}
                     </div>
                     <div class="row">
                       {{#if gpa}}
-                          <div class="gpa">GPA: {{gpa}}</div>
+                          <div class="education-gpa">GPA: {{gpa}}</div>
                       {{/if}}
                     </div>
                     <div class="row">
                       {{#if courses.length}}
-                          <ul class="courses">
+                          <ul class="education-courses">
                             {{#each courses}}
                                 <li>{{.}}</li>
                             {{/each}}
