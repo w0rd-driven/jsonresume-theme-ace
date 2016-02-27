@@ -48,13 +48,19 @@
     </ul>
   {{/content}}
   {{#content "summary"}}
-      <div class="row">
-          <header id="header-summary">
-              <i class="fa fa-user fa-2x fa-border fa-pull-left"></i>
-              <h4 class="title text-uppercase clearfix">Summary</h4>
-          </header>
-      </div>
-      <p class="summary">{{basics.summary}}</p>
+      <article>
+          <div class="row">
+              <div class="col-xs-1">
+                  <i class="fa fa-user fa-2x fa-border fa-pull-left"></i>
+              </div>
+              <div class="col-xs-11">
+                  <header id="header-summary">
+                      <h4 class="title text-uppercase clearfix">Summary</h4>
+                  </header>
+                  <p class="summary">{{basics.summary}}</p>
+              </div>
+          </div>
+      </article>
   {{/content}}
   {{#content "experience"}}
       <article>
