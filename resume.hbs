@@ -70,11 +70,11 @@
                 {{#each work}}
                     <div class="row">
                       {{#if website}}
-                          <h4 class="company pull-left"><a href="{{website}}">{{company}}</a></h4>
+                          <h4 class="experience-company pull-left"><a href="{{website}}">{{company}}</a></h4>
                       {{else}}
-                          <h4 class="company pull-left">{{company}}</h4>
+                          <h4 class="experience-company pull-left">{{company}}</h4>
                       {{/if}}
-                        <time class="date">
+                        <time class="date text-muted">
                           {{#if endDate}}
                             {{#if startDate}}
                                 <span class="startDate" datetime="{{startDate}}">{{startDate}}</span>
@@ -88,21 +88,21 @@
                         </time>
                         <div class="clearfix"></div>
                       {{#if position}}
-                          <h5 class="position">{{position}}</h5>
+                          <h5 class="experience-position">{{position}}</h5>
                       {{/if}}
                     </div>
                     <div class="row">
                       {{#if summary}}
-                          <div class="summary">
+                          <div class="experience-summary">
                               <p>{{summary}}</p>
                           </div>
                       {{/if}}
                     </div>
                     <div class="row">
                       {{#if highlights.length}}
-                          <ul class="highlights">
+                          <ul class="experience-highlights">
                             {{#each highlights}}
-                                <li>{{.}}</li>
+                                <li class="experience-highlight">{{.}}</li>
                             {{/each}}
                           </ul>
                       {{/if}}
