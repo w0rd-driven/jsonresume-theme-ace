@@ -48,157 +48,175 @@
     </ul>
   {{/content}}
   {{#content "summary"}}
-      <header id="header-summary">
-          <i class="fa fa-user fa-2x fa-border fa-pull-left"></i>
-          <h4 class="title text-uppercase clearfix">Summary</h4>
-      </header>
+      <div class="row">
+          <header id="header-summary">
+              <i class="fa fa-user fa-2x fa-border fa-pull-left"></i>
+              <h4 class="title text-uppercase clearfix">Summary</h4>
+          </header>
+      </div>
       <p class="summary">{{basics.summary}}</p>
   {{/content}}
   {{#content "experience"}}
       <article>
-          <header id="header-experience">
-              <i class="fa fa-building fa-2x fa-border fa-pull-left"></i>
-              <h4 class="title text-uppercase clearfix">Experience</h4>
-          </header>
-          <div class="col-md-1"></div>
-          <div class="col-md-11">
-            {{#each work}}
-                <div class="row">
-                  {{#if website}}
-                      <h4 class="company pull-left"><a href="{{website}}">{{company}}</a></h4>
-                  {{else}}
-                      <h4 class="company pull-left">{{company}}</h4>
-                  {{/if}}
-                    <time class="date">
-                      {{#if endDate}}
-                        {{#if startDate}}
-                            <span class="startDate" datetime="{{startDate}}">{{startDate}}</span>
-                            <span class="endDate" datetime="{{endDate}}">- {{endDate}}</span>
-                        {{else}}
-                            <span class="endDate" datetime="{{endDate}}">{{endDate}}</span>
-                        {{/if}}
+          <div class="row">
+              <header id="header-experience">
+                  <i class="fa fa-building fa-2x fa-border fa-pull-left"></i>
+                  <h4 class="title text-uppercase clearfix">Experience</h4>
+              </header>
+          </div>
+          <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-11">
+                {{#each work}}
+                    <div class="row">
+                      {{#if website}}
+                          <h4 class="company pull-left"><a href="{{website}}">{{company}}</a></h4>
                       {{else}}
-                          <span class="endDate">Present</span>
+                          <h4 class="company pull-left">{{company}}</h4>
                       {{/if}}
-                    </time>
-                    <div class="clearfix"></div>
-                  {{#if position}}
-                      <h5 class="position">{{position}}</h5>
-                  {{/if}}
-                </div>
-                <div class="row">
-                  {{#if summary}}
-                      <div class="summary">
-                          <p>{{summary}}</p>
-                      </div>
-                  {{/if}}
-                </div>
-                <div class="row">
-                  {{#if highlights.length}}
-                      <ul class="highlights">
-                        {{#each highlights}}
-                            <li>{{.}}</li>
-                        {{/each}}
-                      </ul>
-                  {{/if}}
-                </div>
-            {{/each}}
+                        <time class="date">
+                          {{#if endDate}}
+                            {{#if startDate}}
+                                <span class="startDate" datetime="{{startDate}}">{{startDate}}</span>
+                                <span class="endDate" datetime="{{endDate}}">- {{endDate}}</span>
+                            {{else}}
+                                <span class="endDate" datetime="{{endDate}}">{{endDate}}</span>
+                            {{/if}}
+                          {{else}}
+                              <span class="endDate">Present</span>
+                          {{/if}}
+                        </time>
+                        <div class="clearfix"></div>
+                      {{#if position}}
+                          <h5 class="position">{{position}}</h5>
+                      {{/if}}
+                    </div>
+                    <div class="row">
+                      {{#if summary}}
+                          <div class="summary">
+                              <p>{{summary}}</p>
+                          </div>
+                      {{/if}}
+                    </div>
+                    <div class="row">
+                      {{#if highlights.length}}
+                          <ul class="highlights">
+                            {{#each highlights}}
+                                <li>{{.}}</li>
+                            {{/each}}
+                          </ul>
+                      {{/if}}
+                    </div>
+                {{/each}}
+              </div>
           </div>
       </article>
   {{/content}}
   {{#content "education"}}
       <article>
-          <header id="header-education">
-              <i class="fa fa-university fa-2x fa-border fa-pull-left"></i>
-              <h4 class="title text-uppercase clearfix">Education</h4>
-          </header>
-          <div class="col-md-1"></div>
-          <div class="col-md-11">
-            {{#each education}}
-                <div class="row">
-                  {{#if area}}
-                      <h4 class="area pull-left">{{area}} {{studyType}}</h4>
-                  {{/if}}
-                    <time class="date">
-                      {{#if endDate}}
-                        {{#if startDate}}
-                            <time class="startDate" datetime="{{startDate}}">{{startDate}}</time>
-                            <time class="endDate" datetime="{{endDate}}">- {{endDate}}</time>
-                        {{else}}
-                            <time class="endDate" datetime="{{endDate}}">{{endDate}}</time>
-                        {{/if}}
-                      {{else}}
-                          <span class="endDate">Present</span>
+          <div class="row">
+              <header id="header-education">
+                  <i class="fa fa-book fa-2x fa-border fa-pull-left"></i>
+                  <h4 class="title text-uppercase clearfix">Education</h4>
+              </header>
+          </div>
+          <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-11">
+                {{#each education}}
+                    <div class="row">
+                      {{#if area}}
+                          <h4 class="area pull-left">{{area}} {{studyType}}</h4>
                       {{/if}}
-                    </time>
-                    <div class="clearfix"></div>
-                  {{#if institution}}
-                      <h5 class="institution">{{institution}}</h5>
-                  {{/if}}
-                </div>
-                <div class="row">
-                  {{#if gpa}}
-                      <div class="gpa">GPA: {{gpa}}</div>
-                  {{/if}}
-                </div>
-                <div class="row">
-                  {{#if courses.length}}
-                      <ul class="courses">
-                        {{#each courses}}
-                            <li>{{.}}</li>
-                        {{/each}}
-                      </ul>
-                  {{/if}}
-                </div>
-            {{/each}}
+                        <time class="date">
+                          {{#if endDate}}
+                            {{#if startDate}}
+                                <time class="startDate" datetime="{{startDate}}">{{startDate}}</time>
+                                <time class="endDate" datetime="{{endDate}}">- {{endDate}}</time>
+                            {{else}}
+                                <time class="endDate" datetime="{{endDate}}">{{endDate}}</time>
+                            {{/if}}
+                          {{else}}
+                              <span class="endDate">Present</span>
+                          {{/if}}
+                        </time>
+                        <div class="clearfix"></div>
+                      {{#if institution}}
+                          <h5 class="institution">{{institution}}</h5>
+                      {{/if}}
+                    </div>
+                    <div class="row">
+                      {{#if gpa}}
+                          <div class="gpa">GPA: {{gpa}}</div>
+                      {{/if}}
+                    </div>
+                    <div class="row">
+                      {{#if courses.length}}
+                          <ul class="courses">
+                            {{#each courses}}
+                                <li>{{.}}</li>
+                            {{/each}}
+                          </ul>
+                      {{/if}}
+                    </div>
+                {{/each}}
+              </div>
           </div>
       </article>
   {{/content}}
   {{#content "skills"}}
       <article>
-          <header id="header-skills">
-              <i class="fa fa-cog fa-2x fa-border fa-pull-left"></i>
-              <h4 class="title text-uppercase clearfix">Skills</h4>
-          </header>
-          <div class="col-md-1"></div>
-          <div class="col-md-11">
-            {{#each skills}}
-              {{#if name}}
-                  <h4 id="skills-name">{{name}}</h4>
-              {{/if}}
-              {{#if keywords.length}}
-                  <ul class="skills-keywords">
-                    {{#each keywords}}
-                        <li class="skills-keyword">{{.}}</li>
-                    {{/each}}
-                  </ul>
-              {{/if}}
-            {{/each}}
+          <div class="row">
+              <header id="header-skills">
+                  <i class="fa fa-cog fa-2x fa-border fa-pull-left"></i>
+                  <h4 class="title text-uppercase clearfix">Skills</h4>
+              </header>
+          </div>
+          <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-11">
+                {{#each skills}}
+                  {{#if name}}
+                      <h4 id="skills-name">{{name}}</h4>
+                  {{/if}}
+                  {{#if keywords.length}}
+                      <ul class="skills-keywords">
+                        {{#each keywords}}
+                            <li class="skills-keyword">{{.}}</li>
+                        {{/each}}
+                      </ul>
+                  {{/if}}
+                {{/each}}
+              </div>
           </div>
       </article>
   {{/content}}
   {{#content "interests"}}
       <article>
-          <header id="header-interests">
-              <i class="fa fa-pencil fa-2x fa-border fa-pull-left"></i>
-              <h4 class="title text-uppercase clearfix">Interests</h4>
-          </header>
-          <div class="col-md-1"></div>
-          <div class="col-md-11">
-            {{#each interests}}
-                <div class="row">
-                  {{#if name}}
-                      <h4 id="interests-name">{{name}}</h4>
-                  {{/if}}
-                  {{#if keywords.length}}
-                      <ul class="interests-keywords">
-                        {{#each keywords}}
-                            <li class="interests-keyword">{{.}}</li>
-                        {{/each}}
-                      </ul>
-                  {{/if}}
-                </div>
-            {{/each}}
+          <div class="row">
+              <header id="header-interests">
+                  <i class="fa fa-pencil fa-2x fa-border fa-pull-left"></i>
+                  <h4 class="title text-uppercase clearfix">Interests</h4>
+              </header>
+          </div>
+          <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-11">
+                {{#each interests}}
+                    <div class="row">
+                      {{#if name}}
+                          <h4 id="interests-name">{{name}}</h4>
+                      {{/if}}
+                      {{#if keywords.length}}
+                          <ul class="interests-keywords">
+                            {{#each keywords}}
+                                <li class="interests-keyword">{{.}}</li>
+                            {{/each}}
+                          </ul>
+                      {{/if}}
+                    </div>
+                {{/each}}
+              </div>
           </div>
       </article>
   {{/content}}
