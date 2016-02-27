@@ -230,6 +230,61 @@
           </div>
       </article>
   {{/content}}
+  {{#content "volunteer"}}
+      <article>
+          <div class="row">
+              <header id="header-volunteer">
+                  <i class="fa fa-users fa-2x fa-border fa-pull-left"></i>
+                  <h4 class="title text-uppercase clearfix">Volunteer Work</h4>
+              </header>
+          </div>
+          <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-11">
+                {{#each volunteer}}
+                    <div class="row">
+                      {{#if position}}
+                        {{#if website}}
+                            <h4 class="volunteer-position pull-left">{{position}}, <a href="{{website}}">{{organization}}</a></h4>
+                        {{else}}
+                            <h4 class="volunteer-position pull-left">{{position}}, {{organization}}</h4>
+                        {{/if}}
+                      {{/if}}
+                        <time class="date text-muted">
+                          {{#if endDate}}
+                            {{#if startDate}}
+                                <time class="startDate" datetime="{{startDate}}">{{startDate}}</time>
+                                <time class="endDate" datetime="{{endDate}}">- {{endDate}}</time>
+                            {{else}}
+                                <time class="endDate" datetime="{{endDate}}">{{endDate}}</time>
+                            {{/if}}
+                          {{else}}
+                              <span class="endDate">Present</span>
+                          {{/if}}
+                        </time>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="row">
+                      {{#if summary}}
+                          <div class="volunteer-summary">
+                              <p>{{summary}}</p>
+                          </div>
+                      {{/if}}
+                    </div>
+                    <div class="row">
+                      {{#if highlights.length}}
+                          <ul class="volunteer-highlights">
+                            {{#each highlights}}
+                                <li>{{.}}</li>
+                            {{/each}}
+                          </ul>
+                      {{/if}}
+                    </div>
+                {{/each}}
+              </div>
+          </div>
+      </article>
+  {{/content}}
   {{#content "interests"}}
       <article>
           <div class="row">
