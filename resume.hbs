@@ -73,41 +73,47 @@
                       <h4 class="title text-uppercase clearfix">Experience</h4>
                       <hr>
                   </header>
-                {{#each work}}
-                  {{#if website}}
-                      <h4 class="experience-company pull-left"><a href="{{website}}">{{company}}</a></h4>
-                  {{else}}
-                      <h4 class="experience-company pull-left">{{company}}</h4>
-                  {{/if}}
-                    <time class="date text-muted">
-                      {{#if endDate}}
-                        {{#if startDate}}
-                            <span class="startDate" datetime="{{startDate}}">{{startDate}}</span>
-                            <span class="endDate" datetime="{{endDate}}">- {{endDate}}</span>
-                        {{else}}
-                            <span class="endDate" datetime="{{endDate}}">{{endDate}}</span>
-                        {{/if}}
-                      {{else}}
-                          <span class="endDate">Present</span>
-                      {{/if}}
-                    </time>
-                    <div class="clearfix"></div>
-                  {{#if position}}
-                      <h5 class="experience-position">{{position}}</h5>
-                  {{/if}}
-                  {{#if summary}}
-                      <div class="experience-summary">
-                          <p>{{summary}}</p>
-                      </div>
-                  {{/if}}
-                  {{#if highlights.length}}
-                      <ul class="experience-highlights">
-                        {{#each highlights}}
-                            <li class="experience-highlight">{{.}}</li>
-                        {{/each}}
-                      </ul>
-                  {{/if}}
-                {{/each}}
+                {{#if work.length}}
+                    <ul class="experiences">
+                      {{#each work}}
+                          <li class="experiences-experience">
+                            {{#if website}}
+                                <h4 class="experience-company pull-left"><a href="{{website}}">{{company}}</a></h4>
+                            {{else}}
+                                <h4 class="experience-company pull-left">{{company}}</h4>
+                            {{/if}}
+                              <time class="date pull-left text-muted">
+                                {{#if endDate}}
+                                  {{#if startDate}}
+                                      <span class="startDate" datetime="{{startDate}}">{{startDate}}</span>
+                                      <span class="endDate" datetime="{{endDate}}">- {{endDate}}</span>
+                                  {{else}}
+                                      <span class="endDate" datetime="{{endDate}}">{{endDate}}</span>
+                                  {{/if}}
+                                {{else}}
+                                    <span class="endDate">Present</span>
+                                {{/if}}
+                              </time>
+                              <div class="clearfix"></div>
+                            {{#if position}}
+                                <h5 class="experience-position">{{position}}</h5>
+                            {{/if}}
+                            {{#if summary}}
+                                <div class="experience-summary">
+                                    <p>{{summary}}</p>
+                                </div>
+                            {{/if}}
+                            {{#if highlights.length}}
+                                <ul class="experience-highlights">
+                                  {{#each highlights}}
+                                      <li class="experience-highlight">{{.}}</li>
+                                  {{/each}}
+                                </ul>
+                            {{/if}}
+                          </li>
+                      {{/each}}
+                    </ul>
+                {{/if}}
               </div>
           </div>
       </article>
