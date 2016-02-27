@@ -112,6 +112,34 @@
           </div>
       </article>
   {{/content}}
+  {{#content "skills"}}
+      <article>
+          <div class="row">
+              <header id="header-skills">
+                  <i class="fa fa-cog fa-2x fa-border fa-pull-left"></i>
+                  <h4 class="title text-uppercase clearfix">Skills</h4>
+              </header>
+          </div>
+          <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-11">
+                {{#each skills}}
+                  {{#if name}}
+                      <h4 id="skills-name">{{name}}</h4>
+                  {{/if}}
+                  {{#if keywords.length}}
+                      <ul class="skills-keywords">
+                        {{#each keywords}}
+                            <li class="skills-keyword pull-left">{{.}}</li>
+                        {{/each}}
+                      </ul>
+                      <div class="clearfix"></div>
+                  {{/if}}
+                {{/each}}
+              </div>
+          </div>
+      </article>
+  {{/content}}
   {{#content "education"}}
       <article>
           <div class="row">
@@ -159,33 +187,6 @@
                           </ul>
                       {{/if}}
                     </div>
-                {{/each}}
-              </div>
-          </div>
-      </article>
-  {{/content}}
-  {{#content "skills"}}
-      <article>
-          <div class="row">
-              <header id="header-skills">
-                  <i class="fa fa-cog fa-2x fa-border fa-pull-left"></i>
-                  <h4 class="title text-uppercase clearfix">Skills</h4>
-              </header>
-          </div>
-          <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-11">
-                {{#each skills}}
-                  {{#if name}}
-                      <h4 id="skills-name">{{name}}</h4>
-                  {{/if}}
-                  {{#if keywords.length}}
-                      <ul class="skills-keywords">
-                        {{#each keywords}}
-                            <li class="skills-keyword">{{.}}</li>
-                        {{/each}}
-                      </ul>
-                  {{/if}}
                 {{/each}}
               </div>
           </div>
