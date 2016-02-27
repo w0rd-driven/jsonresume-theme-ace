@@ -288,40 +288,36 @@
   {{#content "publications"}}
       <article>
           <div class="row">
-              <header id="header-publications">
+              <div class="col-xs-1">
                   <i class="fa fa-print fa-2x fa-border fa-pull-left"></i>
-                  <h4 class="title text-uppercase clearfix">Publications</h4>
-              </header>
-          </div>
-          <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-11">
+              </div>
+              <div class="col-xs-11">
+                  <header id="header-publications">
+                      <h4 class="title text-uppercase clearfix">Publications</h4>
+                      <hr>
+                  </header>
                 {{#each publications}}
-                    <div class="row">
-                      {{#if name}}
-                        {{#if website}}
-                            <h4 class="publications-name pull-left"><a href="{{website}}">{{name}}</a></h4>
-                        {{else}}
-                            <h4 class="publications-name pull-left">{{name}}</h4>
-                        {{/if}}
-                      {{/if}}
-                        <time class="date text-muted">
-                          {{#if releaseDate}}
-                              <time class="publications-releaseDate" datetime="{{releaseDate}}">Published on: {{releaseDate}}</time>
-                          {{/if}}
-                        </time>
-                        <div class="clearfix"></div>
-                      {{#if publisher}}
-                          <h5 class="publications-publisher">{{publisher}}</h5>
-                      {{/if}}
-                    </div>
-                    <div class="row">
-                      {{#if summary}}
-                          <div class="publications-summary">
-                              <p>{{summary}}</p>
-                          </div>
-                      {{/if}}
-                    </div>
+                  {{#if name}}
+                    {{#if website}}
+                        <h4 class="publications-name pull-left"><a href="{{website}}">{{name}}</a></h4>
+                    {{else}}
+                        <h4 class="publications-name pull-left">{{name}}</h4>
+                    {{/if}}
+                  {{/if}}
+                  {{#if releaseDate}}
+                      <time class="date pull-left text-muted">
+                          <time class="publications-releaseDate" datetime="{{releaseDate}}">Published on: {{releaseDate}}</time>
+                      </time>
+                      <div class="clearfix"></div>
+                  {{/if}}
+                  {{#if publisher}}
+                      <h5 class="publications-publisher">{{publisher}}</h5>
+                  {{/if}}
+                  {{#if summary}}
+                      <div class="publications-summary">
+                          <p>{{summary}}</p>
+                      </div>
+                  {{/if}}
                 {{/each}}
               </div>
           </div>
