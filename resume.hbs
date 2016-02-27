@@ -152,24 +152,27 @@
   {{/content}}
   {{#content "interests"}}
       <article>
-          <header>
+          <header id="header-interests">
               <i class="fa fa-pencil fa-2x fa-border fa-pull-left"></i>
-              <h2 class="sectionTitle clearfix">Interests</h2>
+              <h4 class="title text-uppercase clearfix">Interests</h4>
           </header>
-        {{#each interests}}
-            <article class="item">
-              {{#if name}}
-                  <h5>{{name}}</h5>
-              {{/if}}
-              {{#if keywords.length}}
-                  <ul class="keywords">
-                    {{#each keywords}}
-                        <li>{{.}}</li>
-                    {{/each}}
-                  </ul>
-              {{/if}}
-            </article>
-        {{/each}}
+          <div class="col-md-1"></div>
+          <div class="col-md-11">
+            {{#each interests}}
+                <div class="row">
+                  {{#if name}}
+                      <h4 id="interests-name">{{name}}</h4>
+                  {{/if}}
+                  {{#if keywords.length}}
+                      <ul class="interests-keywords">
+                        {{#each keywords}}
+                            <li class="interests-keyword">{{.}}</li>
+                        {{/each}}
+                      </ul>
+                  {{/if}}
+                </div>
+            {{/each}}
+          </div>
       </article>
   {{/content}}
   {{#content "footer"}}
