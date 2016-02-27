@@ -201,36 +201,32 @@
   {{#content "awards"}}
       <article>
           <div class="row">
-              <header id="header-awards">
+              <div class="col-xs-1">
                   <i class="fa fa-trophy fa-2x fa-border fa-pull-left"></i>
-                  <h4 class="title text-uppercase clearfix">Awards</h4>
-              </header>
-          </div>
-          <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-11">
+              </div>
+              <div class="col-xs-11">
+                  <header id="header-awards">
+                      <h4 class="title text-uppercase clearfix">Awards</h4>
+                      <hr>
+                  </header>
                 {{#each awards}}
-                    <div class="row">
-                      {{#if title}}
-                          <h4 class="awards-title pull-left">{{title}}</h4>
-                      {{/if}}
-                        <time class="date text-muted">
-                          {{#if date}}
-                              <time class="awards-date" datetime="{{date}}">Awarded on: {{date}}</time>
-                          {{/if}}
-                        </time>
-                        <div class="clearfix"></div>
-                      {{#if awarder}}
-                          <h5 class="awards-awarder">{{awarder}}</h5>
-                      {{/if}}
-                    </div>
-                    <div class="row">
-                      {{#if summary}}
-                          <div class="awards-summary">
-                              <p>{{summary}}</p>
-                          </div>
-                      {{/if}}
-                    </div>
+                  {{#if title}}
+                      <h4 class="awards-title pull-left">{{title}}</h4>
+                  {{/if}}
+                  {{#if date}}
+                      <time class="date text-muted">
+                          <time class="awards-date" datetime="{{date}}">Awarded on: {{date}}</time>
+                      </time>
+                      <div class="clearfix"></div>
+                  {{/if}}
+                  {{#if awarder}}
+                      <h5 class="awards-awarder">{{awarder}}</h5>
+                  {{/if}}
+                  {{#if summary}}
+                      <div class="awards-summary">
+                          <p>{{summary}}</p>
+                      </div>
+                  {{/if}}
                 {{/each}}
               </div>
           </div>
