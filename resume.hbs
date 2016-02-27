@@ -359,25 +359,23 @@
   {{#content "references"}}
       <article>
           <div class="row">
-              <header id="header-references">
+              <div class="col-xs-1">
                   <i class="fa fa-thumbs-up fa-2x fa-border fa-pull-left"></i>
-                  <h4 class="title text-uppercase clearfix">References</h4>
-              </header>
-          </div>
-          <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-11">
+              </div>
+              <div class="col-xs-11">
+                  <header id="header-references">
+                      <h4 class="title text-uppercase clearfix">References</h4>
+                      <hr>
+                  </header>
                 {{#each references}}
-                    <div class="row">
-                      {{#if name}}
-                          <h4 id="references-name">{{name}}</h4>
-                      {{/if}}
-                      {{#if reference}}
-                          <blockquote class="quote">
-                              <p>{{reference}}</p>
-                          </blockquote>
-                      {{/if}}
-                    </div>
+                  {{#if name}}
+                      <h4 id="references-name">{{name}}</h4>
+                  {{/if}}
+                  {{#if reference}}
+                      <div class="references-reference">
+                          <p>{{reference}}</p>
+                      </div>
+                  {{/if}}
                 {{/each}}
               </div>
           </div>
