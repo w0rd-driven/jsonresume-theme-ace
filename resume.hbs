@@ -130,24 +130,25 @@
   {{/content}}
   {{#content "skills"}}
       <article>
-          <header>
-              <i class="fa fa-pencil fa-2x fa-border fa-pull-left"></i>
-              <h2 class="sectionTitle clearfix">Skills</h2>
+          <header id="header-skills">
+              <i class="fa fa-cog fa-2x fa-border fa-pull-left"></i>
+              <h4 class="title text-uppercase clearfix">Skills</h4>
           </header>
-        {{#each skills}}
-            <article class="item">
+          <div class="col-md-1"></div>
+          <div class="col-md-11">
+            {{#each skills}}
               {{#if name}}
-                  <h4>{{name}}</h4>
+                  <h4 id="skills-name">{{name}}</h4>
               {{/if}}
               {{#if keywords.length}}
-                  <ul class="keywords">
+                  <ul class="skills-keywords">
                     {{#each keywords}}
-                        <li>{{.}}</li>
+                        <li class="skills-keyword">{{.}}</li>
                     {{/each}}
                   </ul>
               {{/if}}
-            </article>
-        {{/each}}
+            {{/each}}
+          </div>
       </article>
   {{/content}}
   {{#content "interests"}}
