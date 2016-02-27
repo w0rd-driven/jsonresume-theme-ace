@@ -149,50 +149,44 @@
   {{#content "education"}}
       <article>
           <div class="row">
-              <header id="header-education">
+              <div class="col-xs-1">
                   <i class="fa fa-book fa-2x fa-border fa-pull-left"></i>
-                  <h4 class="title text-uppercase clearfix">Education</h4>
-              </header>
-          </div>
-          <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-11">
+              </div>
+              <div class="col-xs-11">
+                  <header id="header-education">
+                      <h4 class="title text-uppercase clearfix">Education</h4>
+                      <hr>
+                  </header>
                 {{#each education}}
-                    <div class="row">
-                      {{#if area}}
-                          <h4 class="area pull-left">{{area}} {{studyType}}</h4>
+                  {{#if area}}
+                      <h4 class="area pull-left">{{area}} {{studyType}}</h4>
+                  {{/if}}
+                    <time class="date text-muted">
+                      {{#if endDate}}
+                        {{#if startDate}}
+                            <time class="startDate" datetime="{{startDate}}">{{startDate}}</time>
+                            <time class="endDate" datetime="{{endDate}}">- {{endDate}}</time>
+                        {{else}}
+                            <time class="endDate" datetime="{{endDate}}">{{endDate}}</time>
+                        {{/if}}
+                      {{else}}
+                          <span class="endDate">Present</span>
                       {{/if}}
-                        <time class="date text-muted">
-                          {{#if endDate}}
-                            {{#if startDate}}
-                                <time class="startDate" datetime="{{startDate}}">{{startDate}}</time>
-                                <time class="endDate" datetime="{{endDate}}">- {{endDate}}</time>
-                            {{else}}
-                                <time class="endDate" datetime="{{endDate}}">{{endDate}}</time>
-                            {{/if}}
-                          {{else}}
-                              <span class="endDate">Present</span>
-                          {{/if}}
-                        </time>
-                        <div class="clearfix"></div>
-                      {{#if institution}}
-                          <h5 class="education-institution">{{institution}}</h5>
-                      {{/if}}
-                    </div>
-                    <div class="row">
-                      {{#if gpa}}
-                          <div class="education-gpa">GPA: {{gpa}}</div>
-                      {{/if}}
-                    </div>
-                    <div class="row">
-                      {{#if courses.length}}
-                          <ul class="education-courses">
-                            {{#each courses}}
-                                <li>{{.}}</li>
-                            {{/each}}
-                          </ul>
-                      {{/if}}
-                    </div>
+                    </time>
+                    <div class="clearfix"></div>
+                  {{#if institution}}
+                      <h5 class="education-institution">{{institution}}</h5>
+                  {{/if}}
+                  {{#if gpa}}
+                      <div class="education-gpa">GPA: {{gpa}}</div>
+                  {{/if}}
+                  {{#if courses.length}}
+                      <ul class="education-courses">
+                        {{#each courses}}
+                            <li class="education-course">{{.}}</li>
+                        {{/each}}
+                      </ul>
+                  {{/if}}
                 {{/each}}
               </div>
           </div>
