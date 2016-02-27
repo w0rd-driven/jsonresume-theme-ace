@@ -1,26 +1,51 @@
 {{#extend "layout"}}
   {{#content "title"}}{{basics.name}}{{/content}}
   {{#content "header"}}
-      <h2>{{basics.name}}</h2>
-      <h4>{{basics.label}}</h4>
-      {{#if basics.profiles.length}}
-          <ul class="nav navbar-nav">
-            {{#each basics.profiles}}
-                <li><a href="{{url}}"><i class="fa fa-{{toLower network}} fa-border"></i>{{username}}</a></li>
-            {{/each}}
-          </ul>
+    {{#if basics.picture }}
+        <div class="profile-pic pull-left">
+            <img data-src="holder.js/100x100" alt="{{basics.name}}" src="{{basics.picture}}" class="media-object img-circle">
+        </div>
+        {{#if basics.name }}
+            <h2>{{basics.name}}</h2>
+        {{/if}}
+        {{#if basics.label }}
+            <h4>{{basics.label}}</h4>
+        {{/if}}
+        <div class="clearfix"></div>
+    {{else}}
+      {{#if basics.name }}
+          <h2>{{basics.name}}</h2>
       {{/if}}
-      <ul class="nav navbar-nav navbar-right">
-        {{#if basics.website }}
-            <li><a href="{{basics.website}}">{{basics.website}}</a></li>
-        {{/if}}
-        {{#if basics.email }}
-            <li><a href="mailto:{{basics.email}}">{{basics.email}}</a></li>
-        {{/if}}
-        {{#if basics.phone }}
-            <li><a href="#">{{basics.phone}}</a></li>
-        {{/if}}
-      </ul>
+      {{#if basics.label }}
+          <h4>{{basics.label}}</h4>
+      {{/if}}
+      <div class="clearfix"></div>
+    {{/if}}
+    {{#if basics.profiles.length}}
+        <ul class="nav navbar-nav">
+          {{#each basics.profiles}}
+              <li>
+                  <a href="{{url}}" rel="tooltip" title="{{username}} on {{network}}">
+                      <i class="fa fa-{{toLower network}} fa-2x"></i>
+                  </a>
+              </li>
+          {{/each}}
+        </ul>
+    {{/if}}
+    <ul class="nav navbar-nav navbar-right">
+      {{#if basics.website }}
+          <li><a href="{{basics.website}}"><i class="fa fa-link">{{basics.website}}</i></a></li>
+      {{/if}}
+      {{#if basics.email }}
+          <li><a href="mailto:{{basics.email}}"><i class="fa fa-envelope">{{basics.email}}</i></a></li>
+      {{/if}}
+      {{#if basics.location }}
+          <li><a href="#"><i class="fa fa-map-marker">{{basics.location.city}}, {{basics.location.countryCode}}</i></a></li>
+      {{/if}}
+      {{#if basics.phone }}
+          <li><a href="#">{{basics.phone}}</a></li>
+      {{/if}}
+    </ul>
   {{/content}}
   {{#content "summary"}}
       <header id="header-summary">
