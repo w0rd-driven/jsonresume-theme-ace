@@ -20,6 +20,7 @@
   "homepage": "https://github.com/w0rd-driven/jsonresume-theme-ace#readme",
   "dependencies": {
     "handlebars": "~4",
+    "handlebars-intl": "~1",
     "handlebars-layouts": "~3"
   }
 }

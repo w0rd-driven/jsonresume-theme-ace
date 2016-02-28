@@ -1,9 +1,11 @@
 var fileSystem = require("fs");
 var handlebars = require("handlebars");
 var layouts = require("handlebars-layouts");
+var intl = require('handlebars-intl');
 
 function render(resume) {
   // Register helpers
+  intl.registerWith(handlebars);
   handlebars.registerHelper("toLower", function(input) {
     return input.toLowerCase();
   });

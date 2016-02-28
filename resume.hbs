@@ -117,10 +117,10 @@
                               <time class="date pull-left text-muted">
                                 {{#if endDate}}
                                   {{#if startDate}}
-                                      <span class="startDate" datetime="{{startDate}}">{{startDate}}</span>
-                                      <span class="endDate" datetime="{{endDate}}">- {{endDate}}</span>
+                                      <time class="startDate" datetime="{{startDate}}">{{formatDate startDate month="long" year="numeric"}}</time>
+                                      <time class="endDate" datetime="{{endDate}}">- {{formatDate endDate month="long" year="numeric"}}</time>
                                   {{else}}
-                                      <span class="endDate" datetime="{{endDate}}">{{endDate}}</span>
+                                      <time class="endDate" datetime="{{endDate}}">{{formatDate endDate month="long" year="numeric"}}</time>
                                   {{/if}}
                                 {{else}}
                                     <span class="endDate">Present</span>
@@ -199,13 +199,13 @@
                   {{#if area}}
                       <h4 class="area pull-left">{{area}} {{studyType}}</h4>
                   {{/if}}
-                    <time class="date text-muted">
+                    <time class="date pull-left text-muted">
                       {{#if endDate}}
                         {{#if startDate}}
-                            <time class="startDate" datetime="{{startDate}}">{{startDate}}</time>
-                            <time class="endDate" datetime="{{endDate}}">- {{endDate}}</time>
+                            <time class="startDate" datetime="{{startDate}}">{{formatDate startDate month="long" year="numeric"}}</time>
+                            <time class="endDate" datetime="{{endDate}}">- {{formatDate endDate month="long" year="numeric"}}</time>
                         {{else}}
-                            <time class="endDate" datetime="{{endDate}}">{{endDate}}</time>
+                            <time class="endDate" datetime="{{endDate}}">{{formatDate endDate month="long" year="numeric"}}</time>
                         {{/if}}
                       {{else}}
                           <span class="endDate">Present</span>
@@ -246,8 +246,8 @@
                       <h4 class="awards-title pull-left">{{title}}</h4>
                   {{/if}}
                   {{#if date}}
-                      <time class="date text-muted">
-                          <time class="awards-date" datetime="{{date}}">Awarded on: {{date}}</time>
+                      <time class="date pull-left text-muted">
+                          <time class="awards-date" datetime="{{date}}">Awarded on: {{formatDate date day="numeric" month="long" year="numeric"}}</time>
                       </time>
                       <div class="clearfix"></div>
                   {{/if}}
@@ -283,13 +283,13 @@
                         <h4 class="volunteer-position pull-left">{{position}}, {{organization}}</h4>
                     {{/if}}
                   {{/if}}
-                    <time class="date text-muted">
+                    <time class="date pull-left text-muted">
                       {{#if endDate}}
                         {{#if startDate}}
-                            <time class="startDate" datetime="{{startDate}}">{{startDate}}</time>
-                            <time class="endDate" datetime="{{endDate}}">- {{endDate}}</time>
+                            <time class="startDate" datetime="{{startDate}}">{{formatDate startDate day="numeric" month="long" year="numeric"}}</time>
+                            <time class="endDate" datetime="{{endDate}}">- {{formatDate endDate day="numeric" month="long" year="numeric"}}</time>
                         {{else}}
-                            <time class="endDate" datetime="{{endDate}}">{{endDate}}</time>
+                            <time class="endDate" datetime="{{endDate}}">{{formatDate endDate day="numeric" month="long" year="numeric"}}</time>
                         {{/if}}
                       {{else}}
                           <span class="endDate">Present</span>
@@ -333,7 +333,7 @@
                   {{/if}}
                   {{#if releaseDate}}
                       <time class="date pull-left text-muted">
-                          <time class="publications-releaseDate" datetime="{{releaseDate}}">Published on: {{releaseDate}}</time>
+                          <time class="publications-releaseDate" datetime="{{releaseDate}}">Published on: {{formatDate releaseDate day="numeric" month="long" year="numeric"}}</time>
                       </time>
                       <div class="clearfix"></div>
                   {{/if}}
