@@ -233,25 +233,31 @@
                   <header id="header-awards">
                       <h4 class="title text-uppercase clearfix">Awards</h4>
                   </header>
-                {{#each awards}}
-                  {{#if title}}
-                      <h4 class="awards-title pull-left">{{title}}</h4>
-                  {{/if}}
-                  {{#if date}}
-                      <time class="date pull-left text-muted">
-                          <time class="awards-date" datetime="{{date}}">Awarded on: {{moment date "MMMM D, YYYY"}}</time>
-                      </time>
-                      <div class="clearfix"></div>
-                  {{/if}}
-                  {{#if awarder}}
-                      <h5 class="awards-awarder">{{awarder}}</h5>
-                  {{/if}}
-                  {{#if summary}}
-                      <div class="awards-summary">
-                          <p>{{summary}}</p>
-                      </div>
-                  {{/if}}
-                {{/each}}
+                {{#if awards.length}}
+                    <ul class="awards list-unstyled">
+                      {{#each awards}}
+                          <li class="awards-award card card-nested">
+                            {{#if title}}
+                                <h4 class="awards-title pull-left">{{title}}</h4>
+                            {{/if}}
+                            {{#if date}}
+                                <time class="date pull-left text-muted">
+                                    <time class="awards-date" datetime="{{date}}">Awarded on: {{moment date "MMMM D, YYYY"}}</time>
+                                </time>
+                                <div class="clearfix"></div>
+                            {{/if}}
+                            {{#if awarder}}
+                                <h5 class="awards-awarder">{{awarder}}</h5>
+                            {{/if}}
+                            {{#if summary}}
+                                <div class="awards-summary">
+                                    <p>{{summary}}</p>
+                                </div>
+                            {{/if}}
+                          </li>
+                      {{/each}}
+                    </ul>
+                {{/if}}
               </div>
           </div>
       </article>
@@ -266,36 +272,43 @@
                   <header id="header-volunteer">
                       <h4 class="title text-uppercase clearfix">Volunteer Work</h4>
                   </header>
-                {{#each volunteer}}
-                  {{#if position}}
-                    {{#if website}}
-                        <h4 class="volunteer-position pull-left">{{position}}, <a href="{{website}}">{{organization}}</a></h4>
-                    {{else}}
-                        <h4 class="volunteer-position pull-left">{{position}}, {{organization}}</h4>
-                    {{/if}}
-                  {{/if}}
-                    <time class="date pull-left text-muted">
-                      {{dateRange startDate endDate "MMMM, YYYY"}}
-                    </time>
-                    <time class="date pull-left text-muted">
-                        <i class="fa fa-clock-o fa-border fa-pull-left"></i>
-                      {{dateDuration startDate endDate '{ "units": ["y"], "round": true }' }}
-                    </time>
-                    <div class="clearfix"></div>
-                  {{#if summary}}
-                      <div class="volunteer-summary">
-                          <p>{{summary}}</p>
-                      </div>
-                  {{/if}}
-                  {{#if highlights.length}}
-                      <ul class="volunteer-highlights">
-                        {{#each highlights}}
-                            <li>{{.}}</li>
-                        {{/each}}
-                      </ul>
-                  {{/if}}
-                {{/each}}
+                {{#if volunteer.length}}
+                    <ul class="volunteer list-unstyled">
+                      {{#each volunteer}}
+                          <li class="volunteer-volunteer card card-nested">
+                            {{#if position}}
+                              {{#if website}}
+                                  <h4 class="volunteer-position pull-left">{{position}}, <a href="{{website}}">{{organization}}</a></h4>
+                              {{else}}
+                                  <h4 class="volunteer-position pull-left">{{position}}, {{organization}}</h4>
+                              {{/if}}
+                            {{/if}}
+                              <time class="date pull-left text-muted">
+                                {{dateRange startDate endDate "MMMM, YYYY"}}
+                              </time>
+                              <time class="date pull-left text-muted">
+                                  <i class="fa fa-clock-o fa-border fa-pull-left"></i>
+                                {{dateDuration startDate endDate '{ "units": ["y"], "round": true }' }}
+                              </time>
+                              <div class="clearfix"></div>
+                            {{#if summary}}
+                                <div class="volunteer-summary">
+                                    <p>{{summary}}</p>
+                                </div>
+                            {{/if}}
+                            {{#if highlights.length}}
+                                <ul class="volunteer-highlights">
+                                  {{#each highlights}}
+                                      <li>{{.}}</li>
+                                  {{/each}}
+                                </ul>
+                            {{/if}}
+                          </li>
+                      {{/each}}
+                    </ul>
+                {{/if}}
               </div>
+          </div>
       </article>
   {{/content}}
   {{#content "publications"}}
@@ -308,29 +321,35 @@
                   <header id="header-publications">
                       <h4 class="title text-uppercase clearfix">Publications</h4>
                   </header>
-                {{#each publications}}
-                  {{#if name}}
-                    {{#if website}}
-                        <h4 class="publications-name pull-left"><a href="{{website}}">{{name}}</a></h4>
-                    {{else}}
-                        <h4 class="publications-name pull-left">{{name}}</h4>
-                    {{/if}}
-                  {{/if}}
-                  {{#if releaseDate}}
-                      <time class="date pull-left text-muted">
-                          <time class="publications-releaseDate" datetime="{{releaseDate}}">Published on: {{moment releaseDate "MMMM D, YYYY"}}</time>
-                      </time>
-                      <div class="clearfix"></div>
-                  {{/if}}
-                  {{#if publisher}}
-                      <h5 class="publications-publisher">{{publisher}}</h5>
-                  {{/if}}
-                  {{#if summary}}
-                      <div class="publications-summary">
-                          <p>{{summary}}</p>
-                      </div>
-                  {{/if}}
-                {{/each}}
+                {{#if publications.length}}
+                    <ul class="publications list-unstyled">
+                      {{#each publications}}
+                          <li class="publications-publication card card-nested">
+                            {{#if name}}
+                              {{#if website}}
+                                  <h4 class="publications-name pull-left"><a href="{{website}}">{{name}}</a></h4>
+                              {{else}}
+                                  <h4 class="publications-name pull-left">{{name}}</h4>
+                              {{/if}}
+                            {{/if}}
+                            {{#if releaseDate}}
+                                <time class="date pull-left text-muted">
+                                    <time class="publications-releaseDate" datetime="{{releaseDate}}">Published on: {{moment releaseDate "MMMM D, YYYY"}}</time>
+                                </time>
+                                <div class="clearfix"></div>
+                            {{/if}}
+                            {{#if publisher}}
+                                <h5 class="publications-publisher">{{publisher}}</h5>
+                            {{/if}}
+                            {{#if summary}}
+                                <div class="publications-summary">
+                                    <p>{{summary}}</p>
+                                </div>
+                            {{/if}}
+                          </li>
+                      {{/each}}
+                    </ul>
+                {{/if}}
               </div>
           </div>
       </article>
@@ -345,19 +364,25 @@
                   <header id="header-interests">
                       <h4 class="title text-uppercase clearfix">Interests</h4>
                   </header>
-                {{#each interests}}
-                  {{#if name}}
-                      <h4 id="interests-name">{{name}}</h4>
-                  {{/if}}
-                  {{#if keywords.length}}
-                      <ul class="keywords">
-                        {{#each keywords}}
-                            <li class="label label-primary pull-left keyword">{{.}}</li>
-                        {{/each}}
-                      </ul>
-                      <div class="clearfix"></div>
-                  {{/if}}
-                {{/each}}
+                {{#if interests.length}}
+                    <ul class="interests list-unstyled">
+                      {{#each interests}}
+                          <li class="interests-interest card card-nested">
+                            {{#if name}}
+                                <h4 id="interests-name">{{name}}</h4>
+                            {{/if}}
+                            {{#if keywords.length}}
+                                <ul class="keywords">
+                                  {{#each keywords}}
+                                      <li class="label label-primary pull-left keyword">{{.}}</li>
+                                  {{/each}}
+                                </ul>
+                                <div class="clearfix"></div>
+                            {{/if}}
+                          </li>
+                      {{/each}}
+                    </ul>
+                {{/if}}
               </div>
           </div>
       </article>
