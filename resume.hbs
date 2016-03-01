@@ -117,6 +117,10 @@
                               <time class="date pull-left text-muted">
                                 {{dateRange startDate endDate "MMMM, YYYY"}}
                               </time>
+                              <time class="date pull-left text-muted">
+                                  <i class="fa fa-clock-o fa-border fa-pull-left"></i>
+                                {{dateDuration startDate endDate '{ "units": ["y", "mo"], "round": true }' }}
+                              </time>
                               <div class="clearfix"></div>
                             {{#if position}}
                                 <h5 class="experience-position">{{position}}</h5>
@@ -193,6 +197,10 @@
                     <time class="date pull-left text-muted">
                       {{dateRange startDate endDate "MMMM, YYYY"}}
                     </time>
+                    <time class="date pull-left text-muted">
+                        <i class="fa fa-clock-o fa-border fa-pull-left"></i>
+                      {{dateDuration startDate endDate '{ "units": ["y", "mo"], "round": true }' }}
+                    </time>
                     <div class="clearfix"></div>
                   {{#if institution}}
                       <h5 class="education-institution">{{institution}}</h5>
@@ -267,6 +275,10 @@
                   {{/if}}
                     <time class="date pull-left text-muted">
                       {{dateRange startDate endDate "MMMM, YYYY"}}
+                    </time>
+                    <time class="date pull-left text-muted">
+                        <i class="fa fa-clock-o fa-border fa-pull-left"></i>
+                      {{dateDuration startDate endDate '{ "units": ["y"], "round": true }' }}
                     </time>
                     <div class="clearfix"></div>
                   {{#if summary}}
