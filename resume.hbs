@@ -111,7 +111,7 @@
                             {{#if website}}
                                 <h4 class="experience-company pull-left"><a href="{{website}}">{{company}}</a></h4>
                             {{else}}
-                                <h4 class="experience-company pull-left">{{company}}</h4>
+                                <h4 class="experience-company text-primary pull-left">{{company}}</h4>
                             {{/if}}
                               <time class="date pull-left text-muted">
                                 {{dateRange startDate endDate "MMMM, YYYY"}}
@@ -122,7 +122,7 @@
                               </time>
                               <div class="clearfix"></div>
                             {{#if position}}
-                                <h5 class="experience-position">{{position}}</h5>
+                                <h5 class="experience-position list-name text-success">{{position}}</h5>
                             {{/if}}
                             {{#if summary}}
                                 <div class="experience-summary">
@@ -203,7 +203,7 @@
                               </time>
                               <div class="clearfix"></div>
                             {{#if institution}}
-                                <h5 class="education-institution">{{institution}}</h5>
+                                <h5 class="education-institution list-name text-success">{{institution}}</h5>
                             {{/if}}
                             {{#if gpa}}
                                 <div class="education-gpa">GPA: {{gpa}}</div>
@@ -247,7 +247,7 @@
                                 <div class="clearfix"></div>
                             {{/if}}
                             {{#if awarder}}
-                                <h5 class="awards-awarder">{{awarder}}</h5>
+                                <h5 class="awards-awarder list-name text-success">{{awarder}}</h5>
                             {{/if}}
                             {{#if summary}}
                                 <div class="awards-summary">
@@ -339,7 +339,7 @@
                                 <div class="clearfix"></div>
                             {{/if}}
                             {{#if publisher}}
-                                <h5 class="publications-publisher">{{publisher}}</h5>
+                                <h5 class="publications-publisher list-name text-success">{{publisher}}</h5>
                             {{/if}}
                             {{#if summary}}
                                 <div class="publications-summary">
