@@ -1,5 +1,18 @@
-.fa-border {
-  border-radius: 1em;
+body {
+  padding-top: 150px;
+}
+main section {
+  margin: 20px 0;
+}
+.navbar h2, .navbar h4 {
+  color: #fff;
+}
+.profile-pic {
+  padding: 0 20px 0 0;
+}
+.profile-pic img {
+  width: 100px;
+  height: 100px;
 }
 .clearfix :after {
   content: ".";
@@ -8,18 +21,68 @@
   height: 0;
   clear: both;
 }
+.date {
+  margin-top: 10.5px;
+  margin-left: 10.5px;
+  margin-bottom: 10.5px;
+}
+.list-unstyled {
+  list-style: none;
+  padding-left: 0px;
+}
+.card {
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  padding: 10px 0;
+}
+.card-nested {
+  border-width: 1px 0 0 0;
+}
 .keywords {
   list-style: none;
+  padding-left: 10px;
 }
 .keyword {
-  background-color: #7eb0db;
-  color: white;
-  font-size: 0.9em;
-  padding: 5px;
-  border: 1px solid #357ebd;
-  margin-right: 5px;
+  margin: 0 2px;
+  font-size: 100%;
 }
-.profile-pic img {
-  width: 100px;
-  height: 100px;
+.list-name {
+  margin: 0;
 }
+
+/* Bootstrap overrides */
+.fa-border {
+  border-radius: 1em;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  body {
+    padding-top: 334px;
+  }
+}
+@media (max-width: 348px) {
+  body {
+    padding-top: 364px;
+  }
+}
+@media (max-width: 264px) {
+  body {
+    padding-top: 404px;
+  }
+}
+@media (max-width: 229px) {
+  body {
+    padding-top: 438px;
+  }
+}
+@media (max-width: 161px) {
+  body {
+    padding-top: 458px;
+  }
+}
+/*@media (max-width: 992px) {*/
+  /*.profile-pic {*/
+    /*padding: 10px 0;*/
+  /*}*/
+/*}*/
