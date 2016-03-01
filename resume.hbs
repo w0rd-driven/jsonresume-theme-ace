@@ -187,32 +187,37 @@
                   <header id="header-education">
                       <h4 class="title text-uppercase clearfix">Education</h4>
                   </header>
-                {{#each education}}
-                  {{#if area}}
-                      <h4 class="area pull-left">{{area}} {{studyType}}</h4>
-                  {{/if}}
-                    <time class="date pull-left text-muted">
-                      {{dateRange startDate endDate "MMMM, YYYY"}}
-                    </time>
-                    <time class="date pull-left text-muted">
-                        <i class="fa fa-clock-o fa-border fa-pull-left"></i>
-                      {{dateDuration startDate endDate '{ "units": ["y", "mo"], "round": true }' }}
-                    </time>
-                    <div class="clearfix"></div>
-                  {{#if institution}}
-                      <h5 class="education-institution">{{institution}}</h5>
-                  {{/if}}
-                  {{#if gpa}}
-                      <div class="education-gpa">GPA: {{gpa}}</div>
-                  {{/if}}
-                  {{#if courses.length}}
-                      <ul class="education-courses">
-                        {{#each courses}}
-                            <li class="education-course">{{.}}</li>
-                        {{/each}}
-                      </ul>
-                  {{/if}}
-                {{/each}}
+                {{#if education.length}}
+                <ul class="education list-unstyled">
+                  {{#each education}}
+                      <li class="education-education card card-nested">
+                        {{#if area}}
+                            <h4 class="area pull-left">{{area}} {{studyType}}</h4>
+                        {{/if}}
+                          <time class="date pull-left text-muted">
+                            {{dateRange startDate endDate "MMMM, YYYY"}}
+                          </time>
+                          <time class="date pull-left text-muted">
+                              <i class="fa fa-clock-o fa-border fa-pull-left"></i>
+                            {{dateDuration startDate endDate '{ "units": ["y", "mo"], "round": true }' }}
+                          </time>
+                          <div class="clearfix"></div>
+                        {{#if institution}}
+                            <h5 class="education-institution">{{institution}}</h5>
+                        {{/if}}
+                        {{#if gpa}}
+                            <div class="education-gpa">GPA: {{gpa}}</div>
+                        {{/if}}
+                        {{#if courses.length}}
+                            <ul class="education-courses">
+                              {{#each courses}}
+                                  <li class="education-course">{{.}}</li>
+                              {{/each}}
+                            </ul>
+                        {{/if}}
+                      </li>
+                  {{/each}}
+                {{/if}}
               </div>
           </div>
       </article>
