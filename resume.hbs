@@ -105,9 +105,9 @@
                       <h4 class="title text-uppercase clearfix">Experience</h4>
                   </header>
                 {{#if work.length}}
-                    <ul class="experiences">
+                    <ul class="experiences list-unstyled">
                       {{#each work}}
-                          <li class="experiences-experience">
+                          <li class="experiences-experience card card-nested">
                             {{#if website}}
                                 <h4 class="experience-company pull-left"><a href="{{website}}">{{company}}</a></h4>
                             {{else}}
@@ -155,9 +155,9 @@
                       <h4 class="title text-uppercase clearfix">Skills</h4>
                   </header>
                 {{#if skills.length}}
-                    <ul class="skills">
+                    <ul class="skills list-unstyled">
                       {{#each skills}}
-                          <li class="skills-skill">
+                          <li class="skills-skill card card-nested">
                             {{#if name}}
                                 <h4 id="skills-name">{{name}}</h4>
                             {{/if}}
@@ -367,14 +367,16 @@
                       <h4 class="title text-uppercase clearfix">References</h4>
                   </header>
                 {{#if references.length}}
-                    <ul class="references">
+                    <ul class="references list-unstyled">
                       {{#each references}}
-                          <li class="references-reference">
+                          <li class="references-reference card card-nested">
                             {{#if name}}
                                 <h4 id="references-name">{{name}}</h4>
                             {{/if}}
                             {{#if reference}}
-                                <p>{{reference}}</p>
+                                <blockquote class="reference-quote">
+                                    <p>{{reference}}</p>
+                                </blockquote>
                             {{/if}}
                           </li>
                       {{/each}}
