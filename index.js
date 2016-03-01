@@ -3,6 +3,7 @@ var handlebars = require("handlebars");
 var layouts = require("handlebars-layouts");
 var momentHandler = require("handlebars.moment");
 var moment = require("moment");
+var humanizeDuration = require("humanize-duration");
 
 function render(resume) {
   // Register helpers
@@ -31,6 +32,21 @@ function render(resume) {
       } else {
         result += "Present";
       }
+    }
+    return result;
+  });
+  handlebars.registerHelper("dateDuration", function(startDate, endDate, options) {
+    result = "";
+    if (startDate) {
+      var start =  moment.utc(startDate);
+      var end =  moment.utc();
+      if (endDate)
+        end = moment.utc(endDate);
+      if (options) {
+        optionsObject = (JSON.parse(options));
+        //console.log(optionsObject);
+      }
+      result = humanizeDuration(moment.duration(end.diff(start)), optionsObject);
     }
     return result;
   });
