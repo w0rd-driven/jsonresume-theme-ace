@@ -1,11 +1,39 @@
 var fileSystem = require("fs");
 var handlebars = require("handlebars");
 var layouts = require("handlebars-layouts");
-var intl = require('handlebars-intl');
+var momentHandler = require("handlebars.moment");
+var moment = require("moment");
 
 function render(resume) {
   // Register helpers
-  intl.registerWith(handlebars);
+  momentHandler.registerHelpers(handlebars);
+  handlebars.registerHelper("dateRange", function(startDate, endDate, format) {
+    result = "";
+    if (startDate) {
+      var momentStartDate =  moment.utc(startDate);
+      if (momentStartDate.isValid()) {
+        result += momentStartDate.format(format) + " - ";
+      }
+      if(endDate) {
+        var momentEndDate =  moment.utc(endDate);
+        if (momentEndDate.isValid()) {
+          result += momentEndDate.format(format);
+        }
+      } else {
+        result += "Present";
+      }
+    } else {
+      if(endDate) {
+        var momentEndDate =  moment.utc(endDate);
+        if (momentEndDate.isValid()) {
+          result += momentEndDate.format(format);
+        }
+      } else {
+        result += "Present";
+      }
+    }
+    return result;
+  });
   handlebars.registerHelper("toLower", function(input) {
     return input.toLowerCase();
   });

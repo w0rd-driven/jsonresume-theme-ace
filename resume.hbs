@@ -115,16 +115,7 @@
                                 <h4 class="experience-company pull-left">{{company}}</h4>
                             {{/if}}
                               <time class="date pull-left text-muted">
-                                {{#if endDate}}
-                                  {{#if startDate}}
-                                      <time class="startDate" datetime="{{startDate}}">{{formatDate startDate month="long" year="numeric"}}</time>
-                                      <time class="endDate" datetime="{{endDate}}">- {{formatDate endDate month="long" year="numeric"}}</time>
-                                  {{else}}
-                                      <time class="endDate" datetime="{{endDate}}">{{formatDate endDate month="long" year="numeric"}}</time>
-                                  {{/if}}
-                                {{else}}
-                                    <span class="endDate">Present</span>
-                                {{/if}}
+                                {{dateRange startDate endDate "MMMM, YYYY"}}
                               </time>
                               <div class="clearfix"></div>
                             {{#if position}}
@@ -200,16 +191,7 @@
                       <h4 class="area pull-left">{{area}} {{studyType}}</h4>
                   {{/if}}
                     <time class="date pull-left text-muted">
-                      {{#if endDate}}
-                        {{#if startDate}}
-                            <time class="startDate" datetime="{{startDate}}">{{formatDate startDate month="long" year="numeric"}}</time>
-                            <time class="endDate" datetime="{{endDate}}">- {{formatDate endDate month="long" year="numeric"}}</time>
-                        {{else}}
-                            <time class="endDate" datetime="{{endDate}}">{{formatDate endDate month="long" year="numeric"}}</time>
-                        {{/if}}
-                      {{else}}
-                          <span class="endDate">Present</span>
-                      {{/if}}
+                      {{dateRange startDate endDate "MMMM, YYYY"}}
                     </time>
                     <div class="clearfix"></div>
                   {{#if institution}}
@@ -247,7 +229,7 @@
                   {{/if}}
                   {{#if date}}
                       <time class="date pull-left text-muted">
-                          <time class="awards-date" datetime="{{date}}">Awarded on: {{formatDate date day="numeric" month="long" year="numeric"}}</time>
+                          <time class="awards-date" datetime="{{date}}">Awarded on: {{moment date "MMMM D, YYYY"}}</time>
                       </time>
                       <div class="clearfix"></div>
                   {{/if}}
@@ -284,16 +266,7 @@
                     {{/if}}
                   {{/if}}
                     <time class="date pull-left text-muted">
-                      {{#if endDate}}
-                        {{#if startDate}}
-                            <time class="startDate" datetime="{{startDate}}">{{formatDate startDate day="numeric" month="long" year="numeric"}}</time>
-                            <time class="endDate" datetime="{{endDate}}">- {{formatDate endDate day="numeric" month="long" year="numeric"}}</time>
-                        {{else}}
-                            <time class="endDate" datetime="{{endDate}}">{{formatDate endDate day="numeric" month="long" year="numeric"}}</time>
-                        {{/if}}
-                      {{else}}
-                          <span class="endDate">Present</span>
-                      {{/if}}
+                      {{dateRange startDate endDate "MMMM, YYYY"}}
                     </time>
                     <div class="clearfix"></div>
                   {{#if summary}}
@@ -333,7 +306,7 @@
                   {{/if}}
                   {{#if releaseDate}}
                       <time class="date pull-left text-muted">
-                          <time class="publications-releaseDate" datetime="{{releaseDate}}">Published on: {{formatDate releaseDate day="numeric" month="long" year="numeric"}}</time>
+                          <time class="publications-releaseDate" datetime="{{releaseDate}}">Published on: {{moment releaseDate "MMMM D, YYYY"}}</time>
                       </time>
                       <div class="clearfix"></div>
                   {{/if}}
