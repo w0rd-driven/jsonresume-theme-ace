@@ -1,5 +1,5 @@
 body {
-  padding-top: 150px;
+  padding-top: 458px;
 }
 main section {
   margin: 20px 0;
@@ -48,31 +48,58 @@ main section {
 }
 
 /* Media queries */
-@media (max-width: 768px) {
-  body {
-    padding-top: 334px;
-  }
-}
-@media (max-width: 348px) {
-  body {
-    padding-top: 364px;
-  }
-}
-@media (max-width: 264px) {
-  body {
-    padding-top: 404px;
-  }
-}
-@media (max-width: 229px) {
+@media only screen and (min-width: 162px) {
   body {
     padding-top: 438px;
   }
 }
-@media (max-width: 161px) {
+@media only screen and (min-width: 230px) {
   body {
-    padding-top: 458px;
+    padding-top: 404px;
   }
 }
+@media only screen and (min-width: 264px) {
+  body {
+    padding-top: 364px;
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+  body {
+    padding-top: 364px;
+  }
+}
+
+@media only screen and (min-width : 350px) {
+  body {
+    padding-top: 334px;
+  }
+}
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+  body {
+    padding-top: 334px;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  body {
+    padding-top: 150px;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+
 /*@media (max-width: 992px) {*/
   /*.profile-pic {*/
     /*padding: 10px 0;*/
