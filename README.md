@@ -71,8 +71,9 @@ Now that you have your boilerplate theme installed, go through a quick overview 
 
 * `package.json`: Your package.json is required by all npm packages. Everytime you want to release a new update of your theme, you'll need to update it's version number.
 * `index.js`: This is the file that will return the needed HTML to the theme server. You can use it to process some things with your theme first, but we'll talk about that a bit later.
-* `resume.template`: This is your actual template. This file is sent to the `index.js` for it to sent to the theme server.
-* `style.css`: This is where all the CSS of your project goes. Since the `index.js` only returns HTML, the contents of this file are put between `<style>` tags in your `resume.template` file.
+* `layout.hbs`: This contains your page layout scaffolding. This file is sent to the `index.js` for it to be sent to the theme server.
+* `resume.hbs`: This contains your resume markup. This file is sent to the `index.js` for it to be sent to the theme server.
+* `style.css`: This is where all the CSS of your project goes. Since the `index.js` only returns HTML, the contents of this file are put between `<style>` tags in your `layout.hbs` file.
 
 In order to get values from an actual JSONResume, you'll need to use a templating system, such as [Mustache](http://mustache.github.io/) or [Handlebars](http://handlebarsjs.com/). The default boilerplate theme uses Handlebars.
 
@@ -94,15 +95,19 @@ At the top, you can already see the Node.js `require` function being used with t
 
 The most important part of `index.js` is the `render` function. This is where all the compilation goes. This render function is expected to take a resume object (from a `resume.json`), and should return HTML. In this case, it is returning a compiled Handlebars document. If you removed the Handlebars dependency, you'll want to remove it and replace it with your own templating system compilation.
 
-Above the `return` line are css and template variables. Using the Node.js `fs` module, it reads first the `style.css` and the `resume.template`.
+Above the `return` line are css and template variables. Using the Node.js `fs` module, it reads first the `layout.hbs` and the `resume.hbs`.
 
-### resume.template
+### layout.hbs
 
-The `resume.template` file is where the actual template is. It contains all of the markup needed for your resume. By default, this is a Handlebars document, but it can obviously be changed into a different templating document.
+The `layout.hbs` file is where the page layout scaffolding is. It contains the framing markup needed for your resume. By default, this is a Handlebars document, but it can obviously be changed into a different templating document.
+
+### resume.hbs
+
+The `resume.hbs` file is where the resume template is. It contains the core markup needed for your resume. By default, this is a Handlebars document, but it can obviously be changed into a different templating document.
 
 ### style.css
 
-Last but not least, the `style.css` defines your styles. Technically, this is completely optional, as you could just write all of your styles in the `<style>` tags of your `resume.template`. As the `index.js`, the contents of the `style.css` are put into the `<style>` tags of your compiled theme later, yet again, this is something can change.
+Last but not least, the `style.css` defines your styles. Technically, this is completely optional, as you could just write all of your styles in the `<style>` tags of your `layout.hbs`. As the `index.js`, the contents of the `style.css` are put into the `<style>` tags of your compiled theme later, yet again, this is something can change.
 
 ## Deployment
 
