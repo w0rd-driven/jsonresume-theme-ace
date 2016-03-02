@@ -1,5 +1,5 @@
 body {
-  padding-top: 458px;
+  padding-top: 478px;
 }
 main section {
   margin: 10px 0 0 0;
@@ -46,43 +46,44 @@ main section {
 /* Media queries */
 @media only screen and (min-width: 162px) {
   body {
-    padding-top: 438px;
+    padding-top: 458px;
   }
 }
-@media only screen and (min-width: 230px) {
+@media only screen and (min-width: 188px) {
   body {
-    padding-top: 404px;
+    padding-top: 450px;
   }
 }
-@media only screen and (min-width: 264px) {
+@media only screen and (min-width: 249px) {
   body {
-    padding-top: 364px;
+    padding-top: 414px;
+  }
+}
+@media only screen and (min-width: 263px) {
+  body {
+    padding-top: 370px;
   }
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
   body {
-    padding-top: 364px;
   }
 }
 
-@media only screen and (min-width : 350px) {
+@media only screen and (min-width : 370px) {
   body {
-    padding-top: 334px;
+    padding-top: 338px;
   }
 }
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px) {
-  body {
-    padding-top: 334px;
-  }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
   body {
-    padding-top: 150px;
+    padding-top: 146px;
   }
 }
 
