@@ -26,10 +26,6 @@ main section {
 .card-nested {
   border-width: 1px 0 0 0;
 }
-.keywords {
-  list-style: none;
-  padding-left: 10px;
-}
 .keyword {
   margin: 0 2px;
   font-size: 100%;
