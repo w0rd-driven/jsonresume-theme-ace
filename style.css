@@ -14,17 +14,9 @@ main section {
   width: 100px;
   height: 100px;
 }
-.clearfix :after {
-  content: ".";
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both;
-}
 .date {
   margin-top: 10.5px;
   margin-left: 10.5px;
-  margin-bottom: 10.5px;
 }
 .list-unstyled {
   list-style: none;
