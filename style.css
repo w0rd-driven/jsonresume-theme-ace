@@ -98,3 +98,35 @@ main section {
     /*padding: 10px 0;*/
   /*}*/
 /*}*/
+
+@media print {
+  body {
+    padding-top: 146px;
+  }
+  blockquote {
+    border-left: 5px solid #dddddd;
+    border-left-width: 1px;
+    color: #6f6f6f;
+    border-top-width: 0 !important;
+    border-right-width: 0 !important;
+    border-bottom-width: 0 !important;
+  }
+  .navbar {
+    display: block;
+    border-width:0 !important;
+  }
+  .navbar-toggle {
+    display: none;
+  }
+  .navbar-nav {
+    display: none;
+  }
+  .navbar-inverse {
+    background-color: #008cba;
+    border-color: #006687;
+  }
+  .navbar-fixed-top {
+    position: fixed;
+    top: 0;
+  }
+}
