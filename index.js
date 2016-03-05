@@ -10,9 +10,9 @@ function getPhoto(resume) {
   var result = null;
   if (resume.basics && resume.basics.email) {
     resume.basics.gravatar = gravatar.url(resume.basics.email, {
-      s: '200',
-      r: 'pg',
-      d: 'mm'
+      s: "100",
+      r: "pg",
+      d: "mm"
     });
   }
   if (resume.basics.picture || resume.basics.gravatar) {
