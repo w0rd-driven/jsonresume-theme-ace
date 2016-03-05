@@ -2,29 +2,29 @@
   {{#content "title"}}{{basics.name}}{{/content}}
   {{#content "header"}}
     {{#if photo }}
-        <div class="profile-pic pull-left">
+        <div id="profile-pic" class="pull-left">
             <img data-src="holder.js/100x100" alt="{{basics.name}}" src="{{photo}}" class="media-object img-circle">
         </div>
         {{#if basics.name }}
-            <h2>{{basics.name}}</h2>
+            <h2 id="basics-name">{{basics.name}}</h2>
         {{/if}}
         {{#if basics.label }}
-            <h4>{{basics.label}}</h4>
+            <h4 id="basics-label">{{basics.label}}</h4>
         {{/if}}
         <div class="clearfix"></div>
     {{else}}
       {{#if basics.name }}
-          <h2>{{basics.name}}</h2>
+          <h2 id="basics-name">{{basics.name}}</h2>
       {{/if}}
       {{#if basics.label }}
-          <h4>{{basics.label}}</h4>
+          <h4 id="basics-label">{{basics.label}}</h4>
       {{/if}}
       <div class="clearfix"></div>
     {{/if}}
     {{#if basics.profiles.length}}
-        <ul class="nav navbar-nav">
+        <ul id="basics-profiles" class="nav navbar-nav">
           {{#each basics.profiles}}
-              <li>
+              <li class="basics-profile">
                   <a href="{{url}}" rel="tooltip" title="{{username}} on {{network}}">
                       <i class="fa fa-{{toLower network}} fa-2x"></i>
                   </a>
@@ -34,13 +34,13 @@
     {{/if}}
     <ul class="nav navbar-nav navbar-right">
       {{#if basics.website }}
-          <li><a href="{{basics.website}}"><i class="fa fa-link">{{basics.website}}</i></a></li>
+          <li id="basics-website"><a href="{{basics.website}}"><i class="fa fa-link basics-profile-link">{{basics.website}}</i></a></li>
       {{/if}}
       {{#if basics.email }}
-          <li><a href="mailto:{{basics.email}}"><i class="fa fa-envelope">{{basics.email}}</i></a></li>
+          <li id="basics-email"><a href="mailto:{{basics.email}}"><i class="fa fa-envelope basics-profile-link">{{basics.email}}</i></a></li>
       {{/if}}
       {{#if basics.location }}
-          <li>
+          <li id="basics-location">
               <a href="#">
                   <i class="fa fa-map-marker">
                     {{#if basics.location.city}}
@@ -75,7 +75,7 @@
           </li>
       {{/if}}
       {{#if basics.phone }}
-          <li><a href="#">{{basics.phone}}</a></li>
+          <li id="basics-phone"><a href="#">{{basics.phone}}</a></li>
       {{/if}}
     </ul>
   {{/content}}

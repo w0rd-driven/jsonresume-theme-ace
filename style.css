@@ -7,12 +7,15 @@ main section {
 .navbar h2, .navbar h4 {
   color: #fff;
 }
-.profile-pic {
+#profile-pic {
   padding: 0 20px 0 0;
 }
-.profile-pic img {
+#profile-pic img {
   width: 100px;
   height: 100px;
+}
+i.basics-profile-link:before {
+  padding-right: 4px;
 }
 .date {
   margin-top: 10.5px;
@@ -92,12 +95,6 @@ main section {
 @media only screen and (min-width : 1200px) {
 
 }
-
-/*@media (max-width: 992px) {*/
-  /*.profile-pic {*/
-    /*padding: 10px 0;*/
-  /*}*/
-/*}*/
 
 @media print {
   a[href]:after {
