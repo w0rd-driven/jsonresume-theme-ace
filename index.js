@@ -74,9 +74,9 @@ function render(resume) {
   handlebars.registerPartial("layout", fileSystem.readFileSync(__dirname + "/layout.hbs", "utf8"));
   // Compile template
   var template = fileSystem.readFileSync(__dirname + "/resume.hbs", "utf-8");
-  // Use internal stylesheet
-  resume.photo = getPhoto(resume);
   // resume object injection
+  resume.photo = getPhoto(resume);
+  // Use internal stylesheet
   resume.css = fileSystem.readFileSync(__dirname + "/style.css", "utf-8");
   return handlebars.compile(template)(resume);
 }

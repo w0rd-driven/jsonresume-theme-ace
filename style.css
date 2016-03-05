@@ -101,7 +101,8 @@ i.basics-profile-link:before {
     content: none !important;
   }
   body {
-    padding-top: 146px;
+    padding-top: 100px;
+    color: #222222 !important;
   }
   blockquote {
     border-left: 5px solid #dddddd;
@@ -128,5 +129,18 @@ i.basics-profile-link:before {
   .navbar-fixed-top {
     position: fixed;
     top: 0;
+  }
+  .label-primary {
+    background-color: #008cba !important;
+    color: #fff !important;
+  }
+  .text-primary {
+    color: #008cba !important;
+  }
+  .text-success {
+    color: #43ac6a !important;
+  }
+  .text-muted {
+    color: #999999 !important;
   }
 }
