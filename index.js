@@ -9,13 +9,13 @@ function render(resume) {
   // Register helpers
   momentHandler.registerHelpers(handlebars);
   handlebars.registerHelper("dateRange", function(startDate, endDate, format) {
-    result = "";
+    var result = "";
     if (startDate) {
       var momentStartDate =  moment.utc(startDate);
       if (momentStartDate.isValid()) {
         result += momentStartDate.format(format) + " - ";
       }
-      if(endDate) {
+      if (endDate) {
         var momentEndDate =  moment.utc(endDate);
         if (momentEndDate.isValid()) {
           result += momentEndDate.format(format);
@@ -24,7 +24,7 @@ function render(resume) {
         result += "Present";
       }
     } else {
-      if(endDate) {
+      if (endDate) {
         var momentEndDate =  moment.utc(endDate);
         if (momentEndDate.isValid()) {
           result += momentEndDate.format(format);
@@ -36,7 +36,7 @@ function render(resume) {
     return result;
   });
   handlebars.registerHelper("dateDuration", function(startDate, endDate, options) {
-    result = "";
+    var result = "";
     if (startDate) {
       var start =  moment.utc(startDate);
       var end =  moment.utc();
