@@ -1,9 +1,9 @@
 {{#extend "layout"}}
   {{#content "title"}}{{basics.name}}{{/content}}
   {{#content "header"}}
-    {{#if basics.picture }}
+    {{#if photo }}
         <div class="profile-pic pull-left">
-            <img data-src="holder.js/100x100" alt="{{basics.name}}" src="{{basics.picture}}" class="media-object img-circle">
+            <img data-src="holder.js/100x100" alt="{{basics.name}}" src="{{photo}}" class="media-object img-circle">
         </div>
         {{#if basics.name }}
             <h2>{{basics.name}}</h2>

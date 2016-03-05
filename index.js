@@ -4,6 +4,22 @@ var layouts = require("handlebars-layouts");
 var momentHandler = require("handlebars.moment");
 var moment = require("moment");
 var humanizeDuration = require("humanize-duration");
+var gravatar = require("gravatar");
+
+function getPhoto(resume) {
+  var result = null;
+  if (resume.basics && resume.basics.email) {
+    resume.basics.gravatar = gravatar.url(resume.basics.email, {
+      s: '200',
+      r: 'pg',
+      d: 'mm'
+    });
+  }
+  if (resume.basics.picture || resume.basics.gravatar) {
+    result = resume.basics.picture ? resume.basics.picture : resume.basics.gravatar;
+  }
+  return result;
+}
 
 function render(resume) {
   // Register helpers
@@ -56,10 +72,12 @@ function render(resume) {
   handlebars.registerHelper(layouts(handlebars));
   // Register partials
   handlebars.registerPartial("layout", fileSystem.readFileSync(__dirname + "/layout.hbs", "utf8"));
-  // Use internal stylesheet
-  resume.css = fileSystem.readFileSync(__dirname + "/style.css", "utf-8");
   // Compile template
   var template = fileSystem.readFileSync(__dirname + "/resume.hbs", "utf-8");
+  // Use internal stylesheet
+  resume.photo = getPhoto(resume);
+  // resume object injection
+  resume.css = fileSystem.readFileSync(__dirname + "/style.css", "utf-8");
   return handlebars.compile(template)(resume);
 }
 

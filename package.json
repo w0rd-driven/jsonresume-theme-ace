@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/w0rd-driven/jsonresume-theme-ace#readme",
   "dependencies": {
+    "gravatar": "~1",
     "handlebars": "~4",
     "handlebars-layouts": "~3",
     "handlebars.moment": "~1",
