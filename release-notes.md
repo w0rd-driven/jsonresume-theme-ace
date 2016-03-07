@@ -3,7 +3,7 @@
 ## Development
 
 ## v1.0.7 - March 7th, 2016
-- [#6](https://github.com/w0rd-driven/jsonresume-theme-ace/issues/6) - Navbar follows page during printing ([@w0rd-driven](https://api.github.com/users/w0rd-driven))
+- [#6](https://github.com/w0rd-driven/jsonresume-theme-ace/issues/6) - Navbar follows page during printing ([@w0rd-driven](https://github.com/w0rd-driven))
 
 [Commits](https://github.com/w0rd-driven/jsonresume-theme-ace/compare/v1.0.6...v1.0.7)
 
@@ -22,7 +22,7 @@
 [Commits](https://github.com/w0rd-driven/jsonresume-theme-ace/compare/v1.0.4...v1.0.5)
 
 ## v1.0.4 - March 3rd, 2016
-- [#4](https://github.com/w0rd-driven/jsonresume-theme-ace/issues/4) - Correct CSS issues ([@w0rd-driven](https://api.github.com/users/w0rd-driven))
+- [#4](https://github.com/w0rd-driven/jsonresume-theme-ace/issues/4) - Correct CSS issues ([@w0rd-driven](https://github.com/w0rd-driven))
 - Adding secondary print stylesheet that will need some styles from the main if it's to be used - [653fd2b](https://github.com/w0rd-driven/jsonresume-theme-ace/commit/653fd2b)
 - Added href content removal on print - [68c9632](https://github.com/w0rd-driven/jsonresume-theme-ace/commit/68c9632)
 - Matching the kendall theme's head section. Added comments to note the end of the main content blocks. - [ec26bef](https://github.com/w0rd-driven/jsonresume-theme-ace/commit/ec26bef)
