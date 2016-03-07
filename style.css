@@ -127,7 +127,7 @@ i.basics-profile-link:before {
     border-color: #006687;
   }
   .navbar-fixed-top {
-    position: fixed;
+    position: absolute !important;
     top: 0;
   }
   .label-primary {
