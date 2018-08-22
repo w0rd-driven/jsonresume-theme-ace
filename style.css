@@ -149,9 +149,6 @@ ul,ol {
   .navbar-toggle {
     display: none;
   }
-  .navbar-nav {
-    display: none;
-  }
   .navbar-inverse {
     background-color: #008cba;
     border-color: #006687;
