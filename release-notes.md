@@ -2,6 +2,18 @@
 
 ## Development
 
+## v1.1.0 - August 22nd, 2018
+
+- Page dependencies updated to the latest major versions. - [42a30fb](https://github.com/w0rd-driven/jsonresume-theme-ace/commit/42a30fb)
+- Title updated from just the assumed name to Name - Label if present. This may not be ideal but it makes saving as PDF use a slightly more sane default. - [9a914ef](https://github.com/w0rd-driven/jsonresume-theme-ace/commit/9a914ef)
+- Adjusted the default margins and font sizes for a few key bootstrap selectors - [a853b5f](https://github.com/w0rd-driven/jsonresume-theme-ace/commit/a853b5f)
+- Fix labels to remove the black border on print in favor of a same color border to the label-primary. This is definitely hacky but we currently only have one label being used. - [472277e](https://github.com/w0rd-driven/jsonresume-theme-ace/commit/472277e)
+- Pushing the name to the very top under the printer margins and reducing the body by 20 pixels. The default margin-top for `#basics-name` was 21px. - [a9bb435](https://github.com/w0rd-driven/jsonresume-theme-ace/commit/a9bb435)
+- Using the bootstrap `hidden-print` and `visible-print` classes. We're now hiding the icon columns and only showing the wider text column in print only. This is almost unnecessary duplication but I don't like the idea of adjusting the classes on the fly. Javascript executing before print is a little janky when this is enough of a challenge to debug. - [fc02389](https://github.com/w0rd-driven/jsonresume-theme-ace/commit/fc02389)
+- [#10](https://github.com/w0rd-driven/jsonresume-theme-ace/issues/10) - CSS adjustments for web & print ([@w0rd-driven](https://github.com/w0rd-driven))
+
+[Commits](https://github.com/w0rd-driven/jsonresume-theme-ace/compare/v1.0.8...v1.1.0)
+
 ## v1.0.8 - May 5th, 2018
 - [#7](https://github.com/w0rd-driven/jsonresume-theme-ace/issues/7) - Fix dependency security concerns ([@w0rd-driven](https://github.com/w0rd-driven))
 
