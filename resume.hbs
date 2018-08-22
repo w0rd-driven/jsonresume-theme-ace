@@ -1,5 +1,11 @@
 {{#extend "layout"}}
-  {{#content "title"}}{{basics.name}}{{/content}}
+  {{#content "title"}}
+      {{#if basics.label }}
+          {{basics.name}} - {{basics.label}}
+      {{else}}
+          {{basics.name}}
+      {{/if}}
+  {{/content}}
   {{#content "header"}}
     {{#if photo }}
         <div id="profile-pic" class="pull-left">
