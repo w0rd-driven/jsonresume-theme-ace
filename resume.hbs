@@ -1,8 +1,14 @@
 {{#extend "layout"}}
-  {{#content "title"}}{{basics.name}}{{/content}}
+  {{#content "title"}}
+      {{#if basics.label }}
+          {{basics.name}} - {{basics.label}}
+      {{else}}
+          {{basics.name}}
+      {{/if}}
+  {{/content}}
   {{#content "header"}}
     {{#if photo }}
-        <div id="profile-pic" class="pull-left">
+        <div id="profile-pic" class="pull-left hidden-print">
             <img data-src="holder.js/100x100" alt="{{basics.name}}" src="{{photo}}" class="media-object img-circle">
         </div>
         {{#if basics.name }}
@@ -22,7 +28,7 @@
       <div class="clearfix"></div>
     {{/if}}
     {{#if basics.profiles.length}}
-        <ul id="basics-profiles" class="nav navbar-nav">
+        <ul id="basics-profiles" class="nav navbar-nav hidden-print">
           {{#each basics.profiles}}
               <li class="basics-profile">
                   <a href="{{url}}" rel="tooltip" title="{{username}} on {{network}}">
@@ -32,7 +38,7 @@
           {{/each}}
         </ul>
     {{/if}}
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right hidden-print">
       {{#if basics.website }}
           <li id="basics-website"><a href="{{basics.website}}"><i class="fa fa-link basics-profile-link">{{basics.website}}</i></a></li>
       {{/if}}
@@ -82,10 +88,16 @@
   {{#content "summary"}}
       <article>
           <div class="row">
-              <div class="col-xs-1">
+              <div class="col-xs-1 hidden-print">
                   <i class="fa fa-user fa-2x fa-border fa-pull-left"></i>
               </div>
-              <div class="col-xs-11">
+              <div class="col-xs-11 hidden-print">
+                  <header id="header-summary">
+                      <h4 class="title text-uppercase clearfix">Summary</h4>
+                  </header>
+                  <p class="summary">{{basics.summary}}</p>
+              </div>
+              <div class="col-xs-12 visible-print">
                   <header id="header-summary">
                       <h4 class="title text-uppercase clearfix">Summary</h4>
                   </header>
@@ -97,10 +109,51 @@
   {{#content "experience"}}
       <article>
           <div class="row">
-              <div class="col-xs-1">
+              <div class="col-xs-1 hidden-print">
                   <i class="fa fa-building fa-2x fa-border fa-pull-left"></i>
               </div>
-              <div class="col-xs-11">
+              <div class="col-xs-11 hidden-print">
+                  <header id="header-skills">
+                      <h4 class="title text-uppercase clearfix">Experience</h4>
+                  </header>
+                {{#if work.length}}
+                    <ul id="experiences" class="list-unstyled">
+                      {{#each work}}
+                          <li class="experiences-experience card card-nested">
+                            {{#if website}}
+                                <h4 class="experience-company pull-left"><a href="{{website}}">{{company}}</a></h4>
+                            {{else}}
+                                <h4 class="experience-company text-primary pull-left">{{company}}</h4>
+                            {{/if}}
+                              <time class="date pull-left text-muted">
+                                {{dateRange startDate endDate "MMMM, YYYY"}}
+                              </time>
+                              <time class="date pull-left text-muted">
+                                  <i class="fa fa-clock-o fa-border fa-pull-left"></i>
+                                {{dateDuration startDate endDate '{ "units": ["y", "mo"], "round": true }' }}
+                              </time>
+                              <div class="clearfix"></div>
+                            {{#if position}}
+                                <h5 class="experience-position list-name text-success">{{position}}</h5>
+                            {{/if}}
+                            {{#if summary}}
+                                <div class="experience-summary">
+                                    <p>{{summary}}</p>
+                                </div>
+                            {{/if}}
+                            {{#if highlights.length}}
+                                <ul class="experience-highlights">
+                                  {{#each highlights}}
+                                      <li class="experience-highlight">{{.}}</li>
+                                  {{/each}}
+                                </ul>
+                            {{/if}}
+                          </li>
+                      {{/each}}
+                    </ul>
+                {{/if}}
+              </div>
+              <div class="col-xs-12 visible-print">
                   <header id="header-skills">
                       <h4 class="title text-uppercase clearfix">Experience</h4>
                   </header>
@@ -147,10 +200,34 @@
   {{#content "skills"}}
       <article>
           <div class="row">
-              <div class="col-xs-1">
+              <div class="col-xs-1 hidden-print">
                   <i class="fa fa-cog fa-2x fa-border fa-pull-left"></i>
               </div>
-              <div class="col-xs-11">
+              <div class="col-xs-11 hidden-print">
+                  <header id="header-skills">
+                      <h4 class="title text-uppercase clearfix">Skills</h4>
+                  </header>
+                {{#if skills.length}}
+                    <ul id="skills" class="list-unstyled">
+                      {{#each skills}}
+                          <li class="skills-skill card card-nested">
+                            {{#if name}}
+                                <h4 id="skills-name">{{name}}</h4>
+                            {{/if}}
+                            {{#if keywords.length}}
+                                <ul class="keywords list-inline">
+                                  {{#each keywords}}
+                                      <li class="label label-primary keyword">{{.}}</li>
+                                  {{/each}}
+                                </ul>
+                                <div class="clearfix"></div>
+                            {{/if}}
+                          </li>
+                      {{/each}}
+                    </ul>
+                {{/if}}
+              </div>
+              <div class="col-xs-12 visible-print">
                   <header id="header-skills">
                       <h4 class="title text-uppercase clearfix">Skills</h4>
                   </header>
@@ -180,10 +257,47 @@
   {{#content "education"}}
       <article>
           <div class="row">
-              <div class="col-xs-1">
+              <div class="col-xs-1 hidden-print">
                   <i class="fa fa-book fa-2x fa-border fa-pull-left"></i>
               </div>
-              <div class="col-xs-11">
+              <div class="col-xs-11 hidden-print">
+                  <header id="header-education">
+                      <h4 class="title text-uppercase clearfix">Education</h4>
+                  </header>
+                {{#if education.length}}
+                    <ul id="education" class="list-unstyled">
+                      {{#each education}}
+                          <li class="education-education card card-nested">
+                            {{#if area}}
+                                <h4 class="area pull-left">{{area}} {{studyType}}</h4>
+                            {{/if}}
+                              <time class="date pull-left text-muted">
+                                {{dateRange startDate endDate "MMMM, YYYY"}}
+                              </time>
+                              <time class="date pull-left text-muted">
+                                  <i class="fa fa-clock-o fa-border fa-pull-left"></i>
+                                {{dateDuration startDate endDate '{ "units": ["y", "mo"], "round": true }' }}
+                              </time>
+                              <div class="clearfix"></div>
+                            {{#if institution}}
+                                <h5 class="education-institution list-name text-success">{{institution}}</h5>
+                            {{/if}}
+                            {{#if gpa}}
+                                <div class="education-gpa">GPA: {{gpa}}</div>
+                            {{/if}}
+                            {{#if courses.length}}
+                                <ul class="education-courses">
+                                  {{#each courses}}
+                                      <li class="education-course">{{.}}</li>
+                                  {{/each}}
+                                </ul>
+                            {{/if}}
+                          </li>
+                      {{/each}}
+                    </ul>
+                {{/if}}
+              </div>
+              <div class="col-xs-12 visible-print">
                   <header id="header-education">
                       <h4 class="title text-uppercase clearfix">Education</h4>
                   </header>
@@ -226,10 +340,40 @@
   {{#content "awards"}}
       <article>
           <div class="row">
-              <div class="col-xs-1">
+              <div class="col-xs-1 hidden-print">
                   <i class="fa fa-trophy fa-2x fa-border fa-pull-left"></i>
               </div>
-              <div class="col-xs-11">
+              <div class="col-xs-11 hidden-print">
+                  <header id="header-awards">
+                      <h4 class="title text-uppercase clearfix">Awards</h4>
+                  </header>
+                {{#if awards.length}}
+                    <ul id="awards" class="list-unstyled">
+                      {{#each awards}}
+                          <li class="awards-award card card-nested">
+                            {{#if title}}
+                                <h4 class="awards-title pull-left">{{title}}</h4>
+                            {{/if}}
+                            {{#if date}}
+                                <time class="date pull-left text-muted">
+                                    <time class="awards-date" datetime="{{date}}">Awarded on: {{moment date "MMMM D, YYYY"}}</time>
+                                </time>
+                                <div class="clearfix"></div>
+                            {{/if}}
+                            {{#if awarder}}
+                                <h5 class="awards-awarder list-name text-success">{{awarder}}</h5>
+                            {{/if}}
+                            {{#if summary}}
+                                <div class="awards-summary">
+                                    <p>{{summary}}</p>
+                                </div>
+                            {{/if}}
+                          </li>
+                      {{/each}}
+                    </ul>
+                {{/if}}
+              </div>
+              <div class="col-xs-12 visible-print">
                   <header id="header-awards">
                       <h4 class="title text-uppercase clearfix">Awards</h4>
                   </header>
@@ -265,10 +409,50 @@
   {{#content "volunteer"}}
       <article>
           <div class="row">
-              <div class="col-xs-1">
+              <div class="col-xs-1 hidden-print">
                   <i class="fa fa-users fa-2x fa-border fa-pull-left"></i>
               </div>
-              <div class="col-xs-11">
+              <div class="col-xs-11 hidden-print">
+                  <header id="header-volunteer">
+                      <h4 class="title text-uppercase clearfix">Volunteer Work</h4>
+                  </header>
+                {{#if volunteer.length}}
+                    <ul id="volunteer" class="list-unstyled">
+                      {{#each volunteer}}
+                          <li class="volunteer-volunteer card card-nested">
+                            {{#if position}}
+                              {{#if website}}
+                                  <h4 class="volunteer-position pull-left">{{position}}, <a href="{{website}}">{{organization}}</a></h4>
+                              {{else}}
+                                  <h4 class="volunteer-position pull-left">{{position}}, {{organization}}</h4>
+                              {{/if}}
+                            {{/if}}
+                              <time class="date pull-left text-muted">
+                                {{dateRange startDate endDate "MMMM, YYYY"}}
+                              </time>
+                              <time class="date pull-left text-muted">
+                                  <i class="fa fa-clock-o fa-border fa-pull-left"></i>
+                                {{dateDuration startDate endDate '{ "units": ["y"], "round": true }' }}
+                              </time>
+                              <div class="clearfix"></div>
+                            {{#if summary}}
+                                <div class="volunteer-summary">
+                                    <p>{{summary}}</p>
+                                </div>
+                            {{/if}}
+                            {{#if highlights.length}}
+                                <ul class="volunteer-highlights">
+                                  {{#each highlights}}
+                                      <li>{{.}}</li>
+                                  {{/each}}
+                                </ul>
+                            {{/if}}
+                          </li>
+                      {{/each}}
+                    </ul>
+                {{/if}}
+              </div>
+              <div class="col-xs-12 visible-print">
                   <header id="header-volunteer">
                       <h4 class="title text-uppercase clearfix">Volunteer Work</h4>
                   </header>
@@ -314,10 +498,44 @@
   {{#content "publications"}}
       <article>
           <div class="row">
-              <div class="col-xs-1">
+              <div class="col-xs-1 hidden-print">
                   <i class="fa fa-print fa-2x fa-border fa-pull-left"></i>
               </div>
-              <div class="col-xs-11">
+              <div class="col-xs-11 hidden-print">
+                  <header id="header-publications">
+                      <h4 class="title text-uppercase clearfix">Publications</h4>
+                  </header>
+                {{#if publications.length}}
+                    <ul id="publications" class="list-unstyled">
+                      {{#each publications}}
+                          <li class="publications-publication card card-nested">
+                            {{#if name}}
+                              {{#if website}}
+                                  <h4 class="publications-name pull-left"><a href="{{website}}">{{name}}</a></h4>
+                              {{else}}
+                                  <h4 class="publications-name pull-left">{{name}}</h4>
+                              {{/if}}
+                            {{/if}}
+                            {{#if releaseDate}}
+                                <time class="date pull-left text-muted">
+                                    <time class="publications-releaseDate" datetime="{{releaseDate}}">Published on: {{moment releaseDate "MMMM D, YYYY"}}</time>
+                                </time>
+                                <div class="clearfix"></div>
+                            {{/if}}
+                            {{#if publisher}}
+                                <h5 class="publications-publisher list-name text-success">{{publisher}}</h5>
+                            {{/if}}
+                            {{#if summary}}
+                                <div class="publications-summary">
+                                    <p>{{summary}}</p>
+                                </div>
+                            {{/if}}
+                          </li>
+                      {{/each}}
+                    </ul>
+                {{/if}}
+              </div>
+              <div class="col-xs-12 visible-print">
                   <header id="header-publications">
                       <h4 class="title text-uppercase clearfix">Publications</h4>
                   </header>
@@ -357,10 +575,34 @@
   {{#content "interests"}}
       <article>
           <div class="row">
-              <div class="col-xs-1">
+              <div class="col-xs-1 hidden-print">
                   <i class="fa fa-pencil fa-2x fa-border fa-pull-left"></i>
               </div>
-              <div class="col-xs-11">
+              <div class="col-xs-11 hidden-print">
+                  <header id="header-interests">
+                      <h4 class="title text-uppercase clearfix">Interests</h4>
+                  </header>
+                {{#if interests.length}}
+                    <ul id="interests" class="list-unstyled">
+                      {{#each interests}}
+                          <li class="interests-interest card card-nested">
+                            {{#if name}}
+                                <h4 id="interests-name">{{name}}</h4>
+                            {{/if}}
+                            {{#if keywords.length}}
+                                <ul class="keywords list-inline">
+                                  {{#each keywords}}
+                                      <li class="label label-primary keyword">{{.}}</li>
+                                  {{/each}}
+                                </ul>
+                                <div class="clearfix"></div>
+                            {{/if}}
+                          </li>
+                      {{/each}}
+                    </ul>
+                {{/if}}
+              </div>
+              <div class="col-xs-12 visible-print">
                   <header id="header-interests">
                       <h4 class="title text-uppercase clearfix">Interests</h4>
                   </header>
@@ -390,10 +632,31 @@
   {{#content "references"}}
       <article>
           <div class="row">
-              <div class="col-xs-1">
+              <div class="col-xs-1 hidden-print">
                   <i class="fa fa-thumbs-up fa-2x fa-border fa-pull-left"></i>
               </div>
-              <div class="col-xs-11">
+              <div class="col-xs-11 hidden-print">
+                  <header id="header-references">
+                      <h4 class="title text-uppercase clearfix">References</h4>
+                  </header>
+                {{#if references.length}}
+                    <ul id="references" class="list-unstyled">
+                      {{#each references}}
+                          <li class="references-reference card card-nested">
+                            {{#if name}}
+                                <h4 id="references-name">{{name}}</h4>
+                            {{/if}}
+                            {{#if reference}}
+                                <blockquote class="reference-quote">
+                                    <p>{{reference}}</p>
+                                </blockquote>
+                            {{/if}}
+                          </li>
+                      {{/each}}
+                    </ul>
+                {{/if}}
+              </div>
+              <div class="col-xs-12 visible-print">
                   <header id="header-references">
                       <h4 class="title text-uppercase clearfix">References</h4>
                   </header>

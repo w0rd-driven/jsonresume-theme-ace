@@ -41,6 +41,30 @@ i.basics-profile-link:before {
 .fa-border {
   border-radius: 1em;
 }
+body {
+  font-size: 14px;
+}
+hr {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+h4,.h4,h5,.h5,h6,.h6 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+h2,.h2 {
+  font-size: 28px;
+}
+h4,.h4 {
+  font-size: 18px;
+}
+ul,ol {
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
+.navbar {
+  font-size: 16px;
+}
 
 /* Media queries */
 @media only screen and (min-width: 162px) {
@@ -101,7 +125,7 @@ i.basics-profile-link:before {
     content: none !important;
   }
   body {
-    padding-top: 100px;
+    padding-top: 80px;
     color: #222222 !important;
   }
   blockquote {
@@ -112,14 +136,17 @@ i.basics-profile-link:before {
     border-right-width: 0 !important;
     border-bottom-width: 0 !important;
   }
+  #basics-name {
+    margin-top: 0;
+  }
+  .container {
+    width: auto;
+  }
   .navbar {
     display: block;
-    border-width:0 !important;
+    border-width: 0 !important;
   }
   .navbar-toggle {
-    display: none;
-  }
-  .navbar-nav {
     display: none;
   }
   .navbar-inverse {
@@ -130,6 +157,9 @@ i.basics-profile-link:before {
     position: absolute !important;
     top: 0;
   }
+  .label {
+    border: 1px solid #008cba !important;
+   }
   .label-primary {
     background-color: #008cba !important;
     color: #fff !important;

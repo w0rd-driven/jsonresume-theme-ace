@@ -2,6 +2,11 @@
 
 ## Development
 
+## v1.0.8 - May 5th, 2018
+- [#7](https://github.com/w0rd-driven/jsonresume-theme-ace/issues/7) - Fix dependency security concerns ([@w0rd-driven](https://github.com/w0rd-driven))
+
+[Commits](https://github.com/w0rd-driven/jsonresume-theme-ace/compare/v1.0.7...v1.0.8)
+
 ## v1.0.7 - March 7th, 2016
 - [#6](https://github.com/w0rd-driven/jsonresume-theme-ace/issues/6) - Navbar follows page during printing ([@w0rd-driven](https://github.com/w0rd-driven))
 
