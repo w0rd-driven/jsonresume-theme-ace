@@ -154,6 +154,9 @@ ul,ol {
     position: absolute !important;
     top: 0;
   }
+  .label {
+    border: 1px solid #008cba !important;
+   }
   .label-primary {
     background-color: #008cba !important;
     color: #fff !important;
