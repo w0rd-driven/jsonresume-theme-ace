@@ -125,7 +125,7 @@ ul,ol {
     content: none !important;
   }
   body {
-    padding-top: 100px;
+    padding-top: 80px;
     color: #222222 !important;
   }
   blockquote {
@@ -136,9 +136,15 @@ ul,ol {
     border-right-width: 0 !important;
     border-bottom-width: 0 !important;
   }
+  #basics-name {
+    margin-top: 0;
+  }
+  .container {
+    width: auto;
+  }
   .navbar {
     display: block;
-    border-width:0 !important;
+    border-width: 0 !important;
   }
   .navbar-toggle {
     display: none;
